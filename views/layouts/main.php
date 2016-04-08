@@ -100,7 +100,6 @@ AppAsset::register($this);
         <hr/>
         <?= $content ?>
     </div>
->>>>>>> c335e36163b7810e7221e1b0047eb831ff25805b
 
 <?php $this->endBody() ?>
 </body>
