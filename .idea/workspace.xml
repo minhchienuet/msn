@@ -22,55 +22,7 @@
     <favorites_list name="msn" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="206" selection-end="206" vertical-scroll-proportion="0.46050096" vertical-offset="33" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/params.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="46" selection-start="103" selection-end="103" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="154" selection-end="154" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1734">
-              <folding>
-                <element signature="e#35#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="25" selection-start="3920" selection-end="3920" vertical-scroll-proportion="-7.230769" vertical-offset="1563" max-vertical-offset="1870">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/contact.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="26" selection-start="2046" selection-end="2046" vertical-scroll-proportion="-13.076923" vertical-offset="510" max-vertical-offset="1105">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -256,15 +208,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.06996587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1672355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15151516" sideWeight="0.9300341" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15151516" sideWeight="0.8327645" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -329,14 +281,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/params.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="46" selection-start="103" selection-end="103" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="204">
+        <state line="4" column="46" selection-start="103" selection-end="103" vertical-scroll-proportion="0.12734082" vertical-offset="0" max-vertical-offset="534">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="154" selection-end="154" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1734">
+        <state line="8" column="27" selection-start="154" selection-end="154" vertical-scroll-proportion="-1.4644195" vertical-offset="918" max-vertical-offset="1734">
           <folding>
             <element signature="e#35#43#0" expanded="true" />
           </folding>
@@ -345,21 +297,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="25" selection-start="3920" selection-end="3920" vertical-scroll-proportion="-7.230769" vertical-offset="1563" max-vertical-offset="1870">
+        <state line="107" column="25" selection-start="3920" selection-end="3920" vertical-scroll-proportion="0.77715355" vertical-offset="1336" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/site/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="26" selection-start="2046" selection-end="2046" vertical-scroll-proportion="-13.076923" vertical-offset="510" max-vertical-offset="1105">
+        <state line="52" column="26" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.63670415" vertical-offset="510" max-vertical-offset="1105">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="206" selection-end="206" vertical-scroll-proportion="0.46050096" vertical-offset="33" max-vertical-offset="595">
+        <state line="18" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="0.48392856" vertical-offset="35" max-vertical-offset="595">
           <folding />
         </state>
       </provider>
