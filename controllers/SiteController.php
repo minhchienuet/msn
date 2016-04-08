@@ -89,6 +89,9 @@ class SiteController extends Controller
     public function actionWarning(){
         return $this->render('warning');
     }
+    public function actionResult(){
+            return $this->render('result');
+        }
 
     public function actionNews(){
         return $this->render('news');
