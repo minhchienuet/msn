@@ -20,57 +20,87 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-<div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'MSN',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-default  navbar-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            ['label' => 'Liên hệ', 'url' => ['/site/contact']],
+            [
+                'label' => 'Tìm kiếm nâng cao',
+                'items' => [
+                    ['label' => 'Tìm kiếm theo khu vực', 'url' => ['/site/area']],
+                    ['label' => 'Tìm kiếm theo mức độ ô nhiễm', 'url' => ['/site/aqi']],
+                    [
+                        'label' => 'Tìm kiếm theo thời gian thực',
+                        'options' =>[
+                            'data-toggle' => 'tooltip',
+                            'data-placement' => 'left',
+                            'title' =>'Trả về kết quả gần đây nhất',
+                        ],
+                        'url' => ['/site/time'],
+                    ],
+                 ],
+            ],
+            ['label' => 'Báo cáo/Thống kê', 'url' => ['/site/report']],
+            ['label' => 'Đăng ký cảnh báo', 'url' => ['/site/warning']],
+            ['label' => 'Nhận bản tin', 'url' => ['/site/news']],
         ],
+        ]);
+    ?>
+    <?php
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' =>[
+            Yii::$app->user->isGuest ?
+                ['label' => 'Đăng nhập', 'url' => ['/login']] :
+                [
+                    'label' => ' '. Yii::$app->user->identity->email . ' ',
+                    'items'=>[
+                        ['label' => 'Setting Account', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                        ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
+                    ],
+                ],
+            ['label' => 'Đăng ký', 'url' => ['/signup']],
+        ]
     ]);
     NavBar::end();
     ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+    <div class="col-lg-12">
+        <?php if(Yii::$app->session->hasFlash('success')): ?>
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+                <strong>Success: </strong> <?= Yii::$app->session->getFlash('success') ?>
+            </div>
+        <?php endif; ?>
+        <?php if(Yii::$app->session->hasFlash('error')): ?>
+            <div class="alert alert-danger alert-block">
+                <button type="button" class="close" data-dismiss="alert">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+                <strong>Error: </strong> <?= Yii::$app->session->getFlash('error') ?>
+            </div>
+    <?php endif; ?>
+    </div>
+    <div class="container-fluid">
+        <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
+        <hr/>
         <?= $content ?>
     </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+>>>>>>> c335e36163b7810e7221e1b0047eb831ff25805b
 
 <?php $this->endBody() ?>
 </body>

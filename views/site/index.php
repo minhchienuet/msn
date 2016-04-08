@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 /* @var $this yii\web\View */
@@ -49,5 +50,19 @@ $this->title = 'My Yii Application';
             </div>
         </div>
 
+=======
+
+<div id="contentBody" style="max-height: 600px">
+    <div id="map">
+        <div id="searchBox">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default" id="searchButton">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </form>
+        </div>
+>>>>>>> c335e36163b7810e7221e1b0047eb831ff25805b
     </div>
 </div>
