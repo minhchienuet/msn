@@ -1,8 +1,6 @@
 html,
 body
-#map{
-    position: relative;
-}
+
 #searchBox {
     z-index: 50;
     position: absolute;

@@ -46,17 +46,17 @@
 <!--    <div class="row">-->
 <!--        <div class="col-md-4">-->
 <!--            <div class="row">-->
-<!--                <h2>Tìm Ki?m</h2>-->
+<!--                <h2>Tï¿½m Ki?m</h2>-->
 <!--                <div class="form-horizontal" role="form">-->
 <!--                    <div class="form-group">-->
-<!--                        <label class="control-label col-sm-5" for="wsn-name">V? trí:</label>-->
+<!--                        <label class="control-label col-sm-5" for="wsn-name">V? trï¿½:</label>-->
 <!--                        <div class="col-sm-6">-->
-<!--                            <input type="text" class="form-control" id="wsn-name" placeholder="Nh?p vào tên ??a ?i?m">-->
+<!--                            <input type="text" class="form-control" id="wsn-name" placeholder="Nh?p vï¿½o tï¿½n ??a ?i?m">-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                    <div class="form-group">-->
 <!--                        <div class="col-sm-11 text-center">-->
-<!--                            <button id="btn-sr" class="btn btn-default">Tìm</button>-->
+<!--                            <button id="btn-sr" class="btn btn-default">Tï¿½m</button>-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
@@ -76,8 +76,8 @@
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaHV5aG9hbmdidDIiLCJhIjoiY2lsb3puc2kxMDhvOXU5bTF3YzNzbDNydCJ9.meN01vk94NEjbSdhgZ6XhA', {
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery ï¿½ <a href="http://mapbox.com">Mapbox</a>',
             id: 'mapbox.streets'
         }).addTo(map);
 
@@ -147,8 +147,8 @@
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery ï¿½ <a href="http://mapbox.com">Mapbox</a>',
         id: 'mapbox.streets'
     }).addTo(map);
 

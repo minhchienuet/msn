@@ -7,7 +7,7 @@ use yii\bootstrap\NavBar;
 
     NavBar::begin([
         'options' => [
-        'class' => 'navbar-default  navbar-top',
+        'class' => 'navbar-inverse  navbar-top',
         ],
     ]);
     echo Nav::widget([
