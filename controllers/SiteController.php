@@ -2,15 +2,14 @@
 
 namespace app\controllers;
 
-use app\models\AqiQt;
-use app\models\AqiVn;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\ContactForm;
 use app\models\Address;
-use yii\web\Request;
+use app\models\AqiQt;
+use app\models\AqiVn;
 
 class SiteController extends Controller
 {
