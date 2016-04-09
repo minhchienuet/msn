@@ -96,7 +96,8 @@ $this->title = 'Báo cáo/Thống kê';
     </div>
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-4">
-            <button type="button" id="report" class="btn btn-primary "> OK </button>
+<!--            <button type="button" id="report" class="btn btn-primary "> OK </button>-->
+            <a href="http://msn.local.com/site/result" class="btn btn-primary"> OK </a>
             <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button">Hủy bỏ</a>
         </div>
     </div>
