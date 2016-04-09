@@ -5,8 +5,10 @@
  * Date: 3/10/16
  * Time: 4:01 PM
  */
+use yii\helpers\Html;
 $this->title = 'Đăng ký nhận bản tin';
 ?>
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <form class="form-horizontal" method="post">
     <div class="form-group row">
         <p class="col-sm-offset-4 col-sm-5 text-info">Chọn khu vực nhận bản tin: </p>

@@ -10,8 +10,8 @@ $this->title = 'View Address: '.$model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Addresses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="address-view col-md-5 col-md-offset-4">
-
+<div class="address-view">
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

@@ -4,25 +4,29 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Node */
+/* @var $model app\models\AqiQt */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
+$this->title = 'Level: '.$model->level;
+$this->params['breadcrumbs'][] = ['label' => 'Aqi Qts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="node-view col-md-5 col-md-offset-4">
+<div class="aqi-qt-view">
     <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
+            'level',
             'name',
-            'address_id',
+            'start_value',
+            'end_value',
+            'color',
             'description',
         ],
     ]) ?>
+
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -30,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a('Back', ['index'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Back', ['index'], ['class'=>'btn btn-primary'] ) ?>
     </p>
+
 </div>

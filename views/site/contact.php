@@ -10,6 +10,7 @@ use yii\captcha\Captcha;
 
 $this->title = 'Liên hệ';
 ?>
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <div class="col-sm-offset-4 col-sm-8">
 <div class="site-contact">
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>

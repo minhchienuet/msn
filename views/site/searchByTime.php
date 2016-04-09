@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 $this->title = 'Tìm kiếm theo thời gian thực';
 ?>
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <div id="search_form">
     <form class="form-horizontal" method="post">
         <div class="form-group row">

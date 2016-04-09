@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\AddressSearch */
+/* @var $searchModel app\models\AqiVnSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Addresses';
+$this->title = 'Tiêu chuẩn AQI Việt Nam';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="address-index">
+<div class="aqi-vn-index">
     <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="pull-right">
-        <?= Html::a('Create New Address', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create new level', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,9 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'province',
-            'district',
-            'ward',
+            'level',
+            'name',
+            'start_value',
+            'end_value',
+            'color',
+            'description',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
