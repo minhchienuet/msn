@@ -111,6 +111,9 @@ class SiteController extends Controller
             'addresses' => $addresses,
         ]);
     }
+    public function actionResult(){
+            return $this->render('result');
+        }
 
     public function actionNews(){
         return $this->render('news');

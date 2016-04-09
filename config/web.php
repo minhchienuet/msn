@@ -40,13 +40,13 @@ $config = [
             'clients' => [
                 'google' => [
                     'class' => 'budyaga\users\components\oauth\Google',
-                    'clientId' => '443867829894-80qmsdkfso4maoe516iqbui82reg8asp.apps.googleusercontent.com',
-                    'clientSecret' => 'nHzUTl4rUJyKSfqKd4HyXCnu',
+                    'clientId' => '552729459762-kq5aqtmdjv1odqubjdv9gt1b477sbe4m.apps.googleusercontent.com',
+                    'clientSecret' => 'FzgY4lfx3Wu5yUO2iRS87lVG',
                 ],
                 'facebook' => [
                     'class' => 'budyaga\users\components\oauth\Facebook',
-                    'clientId' => '809012735898619',
-                    'clientSecret' => '7b7447141776a39e7dba09a6369798c0',
+                    'clientId' => '942220362522810',
+                    'clientSecret' => 'eec6149a5839c797fff3c6f40392079e',
                 ],
             ],
         ],
