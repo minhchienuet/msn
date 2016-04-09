@@ -35,7 +35,6 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Liên hệ', 'url' => ['/site/contact']],
             [
                 'label' => 'Tìm kiếm nâng cao',
