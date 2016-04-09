@@ -26,11 +26,13 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
                 <label for='api' class='col-sm-offset-2 col-sm-3 control-label'>Chọn mức độ ô nhiễm</label>
                 <div class='col-md-3'>
                     <select class='form-control'>
-                        <option value='1'>1</option>
-                         <option value='2'>2</option>
-                         <option value='3'>3</option>
-                         <option value='4'>4</option>
-                         <option value='5'selected>5</option>
+                        <?php
+                            foreach($aqi_vn as $aqi){
+                                echo '<option value="'.$aqi->level.'">';
+                                echo $aqi->level;
+                                echo "</option>";
+                            }
+                        ?>
                      </select>
                 </div>
             </div>
@@ -38,13 +40,9 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
                 <label for='api' class='col-sm-offset-2 col-sm-3 control-label'>Chọn mức độ ô nhiễm</label>
                 <div class='col-md-3'>
                     <select class='form-control'>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                        <option value='7' selected>7</option>
+                        <?php foreach($aqi_qt as $aqi): ?>
+                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
@@ -61,18 +59,19 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
         <div class="col-md-offset-3 col-md-6">
             <table class="table table-bordered">
                 <tr class="text-center" style="color: #ffffff">
-                    <td class="col-sm-1" style="background-color: #0566cd"> 1.Tốt </td>
-                    <td class="col-sm-1" style="background-color: #b9c625" > 2.Trung bình </td>
-                    <td class="col-sm-1" style="background-color: #ba6e27"> 3.Kém </td>
-                    <td class="col-sm-1" style="background-color: #ba1627"> 4.Xấu </td>
-                    <td class="col-sm-1" style="background-color: #4e3826"> 5.Nguy hại </td>
+                    <?php foreach($aqi_vn as $aqi){
+                        echo "<td class='col-sm-1' ";
+                        echo "style='background-color: ".$aqi->color." '>";
+                        echo  $aqi->level.". ".$aqi->name ;
+                        echo "</td>";
+                    }?>
                 </tr>
                 <tr class="text-center"  style="color: #ffffff">
-                    <td style="background-color: #0566cd"> 0-50 </td>
-                    <td style="background-color: #b9c625"> 51-100 </td>
-                    <td style="background-color: #ba6e27"> 101-200</td>
-                    <td style="background-color: #ba1627"> 201-300 </td>
-                    <td style="background-color: #4e3826"> 301-500 </td>
+                    <?php foreach($aqi_vn as $aqi){
+                        echo "<td style='background-color: ".$aqi->color." '>";
+                        echo  $aqi->start_value." - ".$aqi->end_value ;
+                        echo "</td>";
+                    }?>
                 </tr>
             </table>
         </div>
@@ -81,23 +80,19 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
         <div class="col-md-offset-2 col-md-10">
             <table class="table table-bordered">
                 <tr class="text-center"  style="color: #ffffff">
-                    <td class="col-lg-1" style="background-color: #03a815"> 1.Tốt </td>
-                    <td class="col-lg-1" style="background-color: #b7c423" > 2.Bình thường </td>
-                    <td class="col-lg-1" style="background-color: #b96d2a"> 3.Có hại </td>
-                    <td class="col-lg-1" style="background-color: #b91526"> 4.Nguy hại </td>
-                    <td class="col-lg-1" style="background-color: #71155b"> 5.Rất nguy hại </td>
-                    <td class="col-lg-1" style="background-color: #620c19"> 6.Nguy hiểm </td>
-                    <td class="col-lg-1" style="background-color: #913a19"> 7.Rất nguy hiểm </td>
-
+                    <?php foreach($aqi_qt as $aqi){
+                        echo "<td class='col-sm-1' ";
+                        echo "style='background-color: ".$aqi->color." '>";
+                        echo  $aqi->level.". ".$aqi->name ;
+                        echo "</td>";
+                    }?>
                 </tr>
                 <tr class="text-center"  style="color: #ffffff">
-                    <td style="background-color: #03a815"> 0-50 </td>
-                    <td style="background-color: #b7c423"> 51-100 </td>
-                    <td style="background-color:  #b96d2a"> 101-150</td>
-                    <td style="background-color: #b91526"> 151-200 </td>
-                    <td style="background-color: #71155b"> 201-300 </td>
-                    <td style="background-color: #620c19"> 301-400 </td>
-                    <td style="background-color: #913a19"> 401-500 </td>
+                    <?php foreach($aqi_qt as $aqi){
+                        echo "<td style='background-color: ".$aqi->color." '>";
+                        echo  $aqi->start_value." - ".$aqi->end_value ;
+                        echo "</td>";
+                    }?>
                 </tr>
             </table>
         </div>

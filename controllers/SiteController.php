@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\AqiQt;
+use app\models\AqiVn;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -75,7 +77,12 @@ class SiteController extends Controller
     }
 
     public function actionAqi(){
-        return $this->render('searchByAqi');
+        $aqi_vn = AqiVn::find()->all();
+        $aqi_qt = AqiQt::find()->all();
+        return $this->render('searchByAqi',[
+            'aqi_vn' => $aqi_vn,
+            'aqi_qt' => $aqi_qt,
+        ]);
     }
 
     public function actionTime(){

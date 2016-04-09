@@ -4,14 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Address */
+/* @var $model app\models\AqiQt */
 
-$this->title = 'Create New Address';
-$this->params['breadcrumbs'][] = ['label' => 'Addresses', 'url' => ['index']];
+$this->title = 'Create new level';
+$this->params['breadcrumbs'][] = ['label' => 'Aqi-qt', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="address-create">
-
+<div class="aqi-qt-create">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

@@ -4,23 +4,27 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Address */
+/* @var $model app\models\AqiQt */
 
-$this->title = 'View Address: '.$model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Addresses', 'url' => ['index']];
+$this->title = 'Level: '.$model->level;
+$this->params['breadcrumbs'][] = ['label' => 'Aqi Qts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="address-view">
+<div class="aqi-qt-view">
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
-            'province',
-            'district',
-            'ward',
+            'level',
+            'name',
+            'start_value',
+            'end_value',
+            'color',
+            'description',
         ],
     ]) ?>
+
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -30,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a('Back', ['index'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Back', ['index'], ['class'=>'btn btn-primary'] ) ?>
     </p>
+
 </div>

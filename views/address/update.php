@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Addresses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="address-update col-md-5 col-md-offset-4">
+<div class="address-update">
 
     <?= $this->render('_form', [
         'model' => $model,
