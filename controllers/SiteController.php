@@ -9,6 +9,8 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\ContactForm;
+use app\models\Address;
+use yii\web\Request;
 
 class SiteController extends Controller
 {
@@ -73,7 +75,12 @@ class SiteController extends Controller
 
     public function actionArea()
     {
-        return $this->render('searchByArea');
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $addresses = Address::findBySql($sql)->all();
+        return $this->render('searchByArea',[
+            'addresses' => $addresses,
+        ]);
+
     }
 
     public function actionAqi(){
@@ -94,10 +101,42 @@ class SiteController extends Controller
     }
 
     public function actionWarning(){
-        return $this->render('warning');
+        $aqi_vn = AqiVn::find()->all();
+        $aqi_qt = AqiQt::find()->all();
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $addresses = Address::findBySql($sql)->all();
+        return $this->render('warning',[
+            'aqi_vn' => $aqi_vn,
+            'aqi_qt' => $aqi_qt,
+            'addresses' => $addresses,
+        ]);
     }
 
     public function actionNews(){
         return $this->render('news');
+    }
+
+    public function actionDistricts(){
+        if(isset($_GET['province'])) {
+            $province = trim($_GET['province']);
+            $sql = "SELECT DISTINCT district FROM addresses WHERE province = '".$province."' ORDER BY district ASC";
+            $addresses = Address::findBySql($sql)->all();
+            echo "<option value=''>--Select--</option>";
+            foreach($addresses as $address){
+                echo "<option value='".$address->district."'>".$address->district."</option>";
+            }
+        }
+    }
+
+    public function actionWards(){
+        if(isset($_GET['district'])) {
+            $district = trim($_GET['district']);
+            $sql = "SELECT DISTINCT ward FROM addresses WHERE district = '".$district."' ORDER BY ward ASC";
+            $addresses = Address::findBySql($sql)->all();
+            echo "<option value=''>--Select--</option>";
+            foreach($addresses as $address){
+                echo "<option value='".$address->ward."'>".$address->ward."</option>";
+            }
+        }
     }
 }

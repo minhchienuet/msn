@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' 
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="address-update">
-
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

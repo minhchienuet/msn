@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="node-view col-md-5 col-md-offset-4">
-
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

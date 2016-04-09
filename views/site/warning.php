@@ -5,26 +5,29 @@
  * Date: 3/10/16
  * Time: 4:01 PM
  */
+use yii\helpers\Html;
+
 $this->title = 'Đăng ký nhận cảnh báo';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<form class="form-horizontal" method="post">
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
+<form class="form-horizontal">
     <div class="form-group row">
         <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Hà Nội</option>
-                <option>Hà Nam</option>
+            <select class="form-control" id="province">
+                <option value="">--Select--</option>
+                <?php foreach($addresses as $address): ?>
+                    <option value=" <?php echo $address->province; ?> "> <?php echo $address->province; ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
     <div class="form-group row">
-        <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+        <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Cầu Giấy</option>
-                <option>Nam Từ Liêm</option>
+            <select class="form-control" id="district">
+                <option value="">--Select--</option>
             </select>
         </div>
     </div>
@@ -32,9 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="form-group row">
         <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Dịch Vọng</option>
-                <option>Mai Dịch</option>
+            <select class="form-control" id="ward">
+                <option value="">--Select--</option>
             </select>
         </div>
     </div>
@@ -56,11 +58,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <label for='api' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
                 <div class='col-md-4'>
                     <select class='form-control'>
-                        <option value='1'> >= 1</option>
-                        <option value='2'> >= 2</option>
-                        <option value='3' selected> >= 3</option>
-                        <option value='4'> >= 4</option>
-                        <option value='5'> =5</option>
+                        <?php foreach($aqi_vn as $aqi): ?>
+                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
@@ -69,13 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <label for='api' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
                 <div class='col-md-4'>
                     <select class='form-control'>
-                        <option value='1'> >= 1</option>
-                        <option value='2'> >= 2</option>
-                        <option value='3'> >= 3</option>
-                        <option value='4'> >= 4</option>
-                        <option value='5' selected> >= 5</option>
-                        <option value='6'> >= 6</option>
-                        <option value='7'> >= 7</option>
+                        <?php foreach($aqi_qt as $aqi): ?>
+                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
@@ -112,18 +108,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-offset-3 col-md-6">
         <table class="table table-bordered">
             <tr class="text-center" style="color: #ffffff">
-                <td class="col-sm-1" style="background-color: #0566cd"> 1.Tốt </td>
-                <td class="col-sm-1" style="background-color: #b9c625" > 2.Trung bình </td>
-                <td class="col-sm-1" style="background-color: #ba6e27"> 3.Kém </td>
-                <td class="col-sm-1" style="background-color: #ba1627"> 4.Xấu </td>
-                <td class="col-sm-1" style="background-color: #4e3826"> 5.Nguy hại </td>
+                <?php foreach($aqi_vn as $aqi): ?>
+                    <td class="col-sm-1" style="background-color: <?php echo $aqi->color ?> ">
+                        <?php echo $aqi->level.". ".$aqi->name ?>
+                    </td>
+                <?php endforeach; ?>
             </tr>
             <tr class="text-center"  style="color: #ffffff">
-                <td style="background-color: #0566cd"> 0-50 </td>
-                <td style="background-color: #b9c625"> 51-100 </td>
-                <td style="background-color: #ba6e27"> 101-200</td>
-                <td style="background-color: #ba1627"> 201-300 </td>
-                <td style="background-color: #4e3826"> 301-500 </td>
+                <?php foreach($aqi_vn as $aqi): ?>
+                    <td style="background-color: <?php echo $aqi->color ?> ">
+                        <?php echo $aqi->start_value." - ".$aqi->end_value ?>
+                    </td>
+                <?php endforeach; ?>
             </tr>
         </table>
     </div>
@@ -132,23 +128,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-offset-1 col-md-10">
         <table class="table table-bordered">
             <tr class="text-center"  style="color: #ffffff">
-                <td class="col-lg-1" style="background-color: #03a815"> 1.Tốt </td>
-                <td class="col-lg-1" style="background-color: #b7c423" > 2.Bình thường </td>
-                <td class="col-lg-1" style="background-color: #b96d2a"> 3.Có hại </td>
-                <td class="col-lg-1" style="background-color: #b91526"> 4.Nguy hại </td>
-                <td class="col-lg-1" style="background-color: #71155b"> 5.Rất nguy hại </td>
-                <td class="col-lg-1" style="background-color: #620c19"> 6.Nguy hiểm </td>
-                <td class="col-lg-1" style="background-color: #913a19"> 7.Rất nguy hiểm </td>
+                <?php foreach($aqi_qt as $aqi): ?>
+                    <td class="col-sm-1" style="background-color: <?php echo $aqi->color ?>">
+                        <?php echo $aqi->level.". ".$aqi->name ?>
+                    </td>
+                <?php endforeach; ?>
 
             </tr>
             <tr class="text-center"  style="color: #ffffff">
-                <td style="background-color: #03a815"> 0-50 </td>
-                <td style="background-color: #b7c423"> 51-100 </td>
-                <td style="background-color:  #b96d2a"> 101-150</td>
-                <td style="background-color: #b91526"> 151-200 </td>
-                <td style="background-color: #71155b"> 201-300 </td>
-                <td style="background-color: #620c19"> 301-400 </td>
-                <td style="background-color: #913a19"> 401-500 </td>
+                <?php foreach($aqi_qt as $aqi): ?>
+                    <td style="background-color: <?php echo $aqi->color ?>">
+                        <?php echo $aqi->start_value." - ".$aqi->end_value ?>
+                    </td>
+                <?php endforeach; ?>
             </tr>
         </table>
     </div>
@@ -168,7 +160,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-
 <script>
     $('#tcvn').on('click', function () {
         $("#levels_tcvn").show();
@@ -181,5 +172,38 @@ $this->params['breadcrumbs'][] = $this->title;
         $("#chart_tcqt").show();
         $("#levels_tcvn").hide();
         $("#chart_tcvn").hide();
+    });
+
+    $('#province').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var province = this.value;
+        $.ajax({
+            url:"<?php echo Yii::$app->request->baseUrl. '/site/districts'?>",
+            type: "GET",
+            contentType: "JSON",
+            data: {province: province},
+            success:function(response) {
+                $('#district').html(response);
+            },
+            error: function(){
+                console.log("Error");
+            }
+        });
+    });
+    $('#district').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var district = this.value;
+        $.ajax({
+            url:"<?php echo Yii::$app->request->baseUrl. '/site/wards'?>",
+            type: "GET",
+            contentType: "JSON",
+            data: {district: district},
+            success:function(response) {
+                $('#ward').html(response);
+            },
+            error: function(){
+                console.log("Error");
+            }
+        });
     });
 </script>

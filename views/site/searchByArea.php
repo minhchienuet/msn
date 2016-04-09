@@ -8,24 +8,25 @@
 use yii\helpers\Html;
 $this->title = 'Tìm kiếm theo khu vực';
 ?>
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <div id="search_form">
     <form class="form-horizontal" method="post">
         <div class="form-group row">
             <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Hà Nội</option>
-                    <option>Hà Nam</option>
+                <select class="form-control" id="province">
+                    <option value="">--Select--</option>
+                    <?php foreach($addresses as $address): ?>
+                        <option value=" <?php echo $address->province; ?> "> <?php echo $address->province; ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
-
         <div class="form-group row">
-            <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+            <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Cầu Giấy</option>
-                    <option>Nam Từ Liêm</option>
+                <select class="form-control" id="district">
+                    <option value="">--Select--</option>
                 </select>
             </div>
         </div>
@@ -33,9 +34,8 @@ $this->title = 'Tìm kiếm theo khu vực';
         <div class="form-group row">
             <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Dịch Vọng</option>
-                    <option>Mai Dịch</option>
+                <select class="form-control" id="ward">
+                    <option value="">--Select--</option>
                 </select>
             </div>
         </div>
@@ -101,5 +101,37 @@ $this->title = 'Tìm kiếm theo khu vực';
     $('#search').on('click', function () {
         var content = $("#result").html();
         $("#search_form").replaceWith(content);
+    });
+    $('#province').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var province = this.value;
+        $.ajax({
+            url:"<?php echo Yii::$app->request->baseUrl. '/site/districts'?>",
+            type: "GET",
+            contentType: "JSON",
+            data: {province: province},
+            success:function(response) {
+                $('#district').html(response);
+            },
+            error: function(){
+                console.log("Error");
+            }
+        });
+    });
+    $('#district').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var district = this.value;
+        $.ajax({
+            url:"<?php echo Yii::$app->request->baseUrl. '/site/wards'?>",
+            type: "GET",
+            contentType: "JSON",
+            data: {district: district},
+            success:function(response) {
+                $('#ward').html(response);
+            },
+            error: function(){
+                console.log("Error");
+            }
+        });
     });
 </script>

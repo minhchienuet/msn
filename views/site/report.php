@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Báo cáo/Thống kê';
 ?>
-
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <div id="report_form">
 <form class="form-horizontal" method="post">
     <div class="form-group row">

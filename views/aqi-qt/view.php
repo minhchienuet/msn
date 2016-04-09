@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Aqi Qts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="aqi-qt-view">
-
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

@@ -11,7 +11,7 @@ $this->title = 'Tiêu chuẩn AQI Quốc tế';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="aqi-qt-index">
-
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="pull-right">

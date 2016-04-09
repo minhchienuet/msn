@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Aqi-Vn', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="aqi-vn-create">
-
+    <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

@@ -8,6 +8,7 @@
 use yii\helpers\Html;
 $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
 ?>
+<h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
 <div id="search_form">
     <form class="form-horizontal" method="post">
         <div class="form-group row">
@@ -26,13 +27,9 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
                 <label for='api' class='col-sm-offset-2 col-sm-3 control-label'>Chọn mức độ ô nhiễm</label>
                 <div class='col-md-3'>
                     <select class='form-control'>
-                        <?php
-                            foreach($aqi_vn as $aqi){
-                                echo '<option value="'.$aqi->level.'">';
-                                echo $aqi->level;
-                                echo "</option>";
-                            }
-                        ?>
+                        <?php foreach($aqi_vn as $aqi): ?>
+                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
+                        <?php endforeach; ?>
                      </select>
                 </div>
             </div>
@@ -59,19 +56,18 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
         <div class="col-md-offset-3 col-md-6">
             <table class="table table-bordered">
                 <tr class="text-center" style="color: #ffffff">
-                    <?php foreach($aqi_vn as $aqi){
-                        echo "<td class='col-sm-1' ";
-                        echo "style='background-color: ".$aqi->color." '>";
-                        echo  $aqi->level.". ".$aqi->name ;
-                        echo "</td>";
-                    }?>
+                    <?php foreach($aqi_vn as $aqi): ?>
+                        <td class="col-sm-1" style="background-color: <?php echo $aqi->color ?> ">
+                            <?php echo $aqi->level.". ".$aqi->name ?>
+                        </td>
+                    <?php endforeach; ?>
                 </tr>
                 <tr class="text-center"  style="color: #ffffff">
-                    <?php foreach($aqi_vn as $aqi){
-                        echo "<td style='background-color: ".$aqi->color." '>";
-                        echo  $aqi->start_value." - ".$aqi->end_value ;
-                        echo "</td>";
-                    }?>
+                    <?php foreach($aqi_vn as $aqi): ?>
+                        <td style="background-color: <?php echo $aqi->color ?> ">
+                        <?php echo $aqi->start_value." - ".$aqi->end_value ?>
+                        </td>
+                    <?php endforeach; ?>
                 </tr>
             </table>
         </div>
@@ -80,19 +76,18 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
         <div class="col-md-offset-2 col-md-10">
             <table class="table table-bordered">
                 <tr class="text-center"  style="color: #ffffff">
-                    <?php foreach($aqi_qt as $aqi){
-                        echo "<td class='col-sm-1' ";
-                        echo "style='background-color: ".$aqi->color." '>";
-                        echo  $aqi->level.". ".$aqi->name ;
-                        echo "</td>";
-                    }?>
+                    <?php foreach($aqi_qt as $aqi): ?>
+                    <td class="col-sm-1" style="background-color: <?php echo $aqi->color ?>">
+                            <?php echo $aqi->level.". ".$aqi->name ?>
+                    </td>
+                    <?php endforeach; ?>
                 </tr>
                 <tr class="text-center"  style="color: #ffffff">
-                    <?php foreach($aqi_qt as $aqi){
-                        echo "<td style='background-color: ".$aqi->color." '>";
-                        echo  $aqi->start_value." - ".$aqi->end_value ;
-                        echo "</td>";
-                    }?>
+                    <?php foreach($aqi_qt as $aqi): ?>
+                        <td style="background-color: <?php echo $aqi->color ?>">
+                            <?php echo $aqi->start_value." - ".$aqi->end_value ?>
+                        </td>
+                    <?php endforeach; ?>
                 </tr>
             </table>
         </div>

@@ -96,7 +96,6 @@ AppAsset::register($this);
     <?php endif; ?>
     </div>
     <div class="container-fluid">
-        <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
         <?= $content ?>
     </div>
 
