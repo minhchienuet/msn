@@ -31,6 +31,7 @@ class Node extends \yii\db\ActiveRecord
     {
         return [
             [['address_id'], 'integer'],
+            [['name'], 'required'],
             [['name', 'description'], 'string', 'max' => 255],
             [['address_id'], 'exist', 'skipOnError' => true, 'targetClass' => Address::className(), 'targetAttribute' => ['address_id' => 'id']],
         ];

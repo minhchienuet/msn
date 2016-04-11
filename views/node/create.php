@@ -13,7 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="node-create">
     <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= $this->render('_form', [
-        'model' => $model,
+        'node' => $node,
+        'address' => $address,
     ]) ?>
 
 </div>

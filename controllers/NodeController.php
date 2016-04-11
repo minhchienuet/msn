@@ -5,9 +5,11 @@ namespace app\controllers;
 use Yii;
 use app\models\Node;
 use app\models\NodeSearch;
+use app\models\Address;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\base\Model;
 
 /**
  * NodeController implements the CRUD actions for Node model.
@@ -52,8 +54,13 @@ class NodeController extends Controller
      */
     public function actionView($id)
     {
+        $node = Node::findOne($id);
+        $sql = "SELECT * FROM addresses WHERE id =$node->address_id ";
+        $address = Address::findBySql($sql)->one();
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'address' => $address,
+
         ]);
     }
 
@@ -64,12 +71,19 @@ class NodeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Node();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $node = new Node();
+        $address = new Address();
+
+        if ($node->load(Yii::$app->request->post()) && $address->load(Yii::$app->request->post()) && Model::validateMultiple([$node, $address])) {
+                $address->save(false);// skip validation as model is already validated
+                $node->address_id = $address->id; // no need for validation rule on user_id as you set it yourself
+                $node->save(false);
+                return $this->redirect(['view', 'id' => $node->id]);
+
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'node' => $node,
+                'address' => $address,
             ]);
         }
     }
@@ -82,15 +96,19 @@ class NodeController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $node = Node::findOne($id);
+        $sql = "SELECT * FROM addresses WHERE id =$node->address_id ";
+        $address = Address::findBySql($sql)->one();
+        if ($node->load(Yii::$app->request->post()) && $address->load(Yii::$app->request->post()) && Model::validateMultiple([$node, $address]) ) {
+            $node->save(false);
+            $address->save(false);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            return $this->redirect(['view', 'id' => $node->id]);
         }
+        return $this->render('update', [
+            'node' => $node,
+            'address' => $address,
+        ]);
     }
 
     /**

@@ -10,14 +10,33 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="node-view col-md-5 col-md-offset-4">
+<div class="node-view">
     <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
             'name',
-            'address_id',
+            [
+                'attribute'=>'address_id',
+                'label'=>'Address ID',
+                'value'=>$address->id,
+            ],
+            [
+                'attribute'=>'province',
+                'label'=>'Province',
+                'value'=>$address->province,
+            ],
+            [
+                'attribute'=>'district',
+                'label'=>'District',
+                'value'=>$address->district,
+            ],
+            [
+                'attribute'=>'ward',
+                'label'=>'Ward',
+                'value'=>$address->ward,
+            ],
             'description',
         ],
     ]) ?>

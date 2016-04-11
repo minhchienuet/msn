@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 /* @var $model app\models\Node */
 /* @var $form yii\widgets\ActiveForm */
 
-$addresses = ArrayHelper::map(Address::find()->all(),'id','ward','district');
+//$addresses = ArrayHelper::map(Address::find()->all(),'id','ward','district');
 
 ?>
 
@@ -16,14 +16,18 @@ $addresses = ArrayHelper::map(Address::find()->all(),'id','ward','district');
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($address, 'province')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'address_id')->dropDownList($addresses,['prompt'=>'--Select an address--']) ?>
+    <?= $form->field($address, 'district')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textArea(['rows' => '6']) ?>
+    <?= $form->field($address, 'ward')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
+    <?= $form->field($node, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($node, 'description')->textArea(['rows' => '6']) ?>
+
+    <div class="form-group text-center">
+        <?= Html::submitButton($node->isNewRecord ? 'Create' : 'Update', ['class' => $node->isNewRecord ? 'btn btn-primary' : 'btn btn-primary']) ?>
         <?= Html::a('Cancel', ['index'], ['class' => 'btn btn-danger']) ?>
     </div>
 
