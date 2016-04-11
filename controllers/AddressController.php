@@ -17,6 +17,7 @@ class AddressController extends Controller
     /**
      * @inheritdoc
      */
+    public $layout = 'admin_page';
     public function behaviors()
     {
         return [

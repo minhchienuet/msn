@@ -8,10 +8,10 @@ $config = [
     'bootstrap' => ['log'],
     // start budyaga
     'modules' => [
-        'user' => [
+        'admin' => [
             'class' => 'budyaga\users\Module',
-            'userPhotoUrl' => 'http://example.com/uploads/user/photo',
-            'userPhotoPath' => '@frontend/web/uploads/user/photo'
+            'userPhotoUrl' => 'http://msn.local.com/uploads/user/photo',
+            'userPhotoPath' => '@app/web/uploads/user/photo'
         ],
     ],
 
@@ -24,10 +24,6 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-//        'user' => [
-//            'identityClass' => 'app\models\User',
-//            'enableAutoLogin' => true,
-//        ],
 
         // start budyaga
         'user' => [
@@ -55,16 +51,16 @@ $config = [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => [
-                '/signup' => '/user/user/signup',
-                '/login' => '/user/user/login',
-                '/logout' => '/user/user/logout',
-                '/requestPasswordReset' => '/user/user/request-password-reset',
-                '/resetPassword' => '/user/user/reset-password',
-                '/profile' => '/user/user/profile',
-                '/retryConfirmEmail' => '/user/user/retry-confirm-email',
-                '/confirmEmail' => '/user/user/confirm-email',
-                '/unbind/<id:[\w\-]+>' => '/user/auth/unbind',
-                '/oauth/<authclient:[\w\-]+>' => '/user/auth/index',
+                '/signup' => '/admin/account/signup',
+                '/login' => '/admin/account/login',
+                '/logout' => '/admin/account/logout',
+                '/requestPasswordReset' => '/admin/account/request-password-reset',
+                '/resetPassword' => '/admin/account/reset-password',
+                '/profile' => '/admin/account/profile',
+                '/retryConfirmEmail' => '/admin/account/retry-confirm-email',
+                '/confirmEmail' => '/admin/account/confirm-email',
+                '/unbind/<id:[\w\-]+>' => '/admin/auth/unbind',
+                '/oauth/<authclient:[\w\-]+>' => '/admin/auth/index',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
