@@ -23,34 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NodeController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/NodeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="35" selection-start="2624" selection-end="2624" vertical-scroll-proportion="-7.923077" vertical-offset="1460" max-vertical-offset="2516">
-              <folding>
-                <element signature="e#35#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/node/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="40" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-5.5" vertical-offset="486" max-vertical-offset="1020">
-              <folding>
-                <element signature="e#7#28#0" expanded="true" />
-                <marker date="1460405896585" expanded="true" signature="299:417" placeholder="..." />
-                <marker date="1460405896585" expanded="true" signature="1149:1170" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/node/_form.php">
+        <entry file="file://$PROJECT_DIR$/views/aqi-qt/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="41" selection-start="391" selection-end="391" vertical-scroll-proportion="0.26103646" vertical-offset="85" max-vertical-offset="663">
+            <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.26103646" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/aqi-vn/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="0" selection-start="261" selection-end="261" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
@@ -66,9 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/views/account/login.php" />
-        <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/views/account/resetPassword.php" />
-        <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/views/account/retryConfirmEmail.php" />
         <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/views/account/signup.php" />
         <option value="$PROJECT_DIR$/config/web.php" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
@@ -80,8 +62,11 @@
         <option value="$PROJECT_DIR$/views/node/update.php" />
         <option value="$PROJECT_DIR$/views/address/view.php" />
         <option value="$PROJECT_DIR$/views/node/view.php" />
-        <option value="$PROJECT_DIR$/views/node/_form.php" />
         <option value="$PROJECT_DIR$/controllers/NodeController.php" />
+        <option value="$PROJECT_DIR$/views/aqi-vn/view.php" />
+        <option value="$PROJECT_DIR$/views/node/_form.php" />
+        <option value="$PROJECT_DIR$/views/aqi-vn/_form.php" />
+        <option value="$PROJECT_DIR$/views/aqi-qt/_form.php" />
       </list>
     </option>
   </component>
@@ -178,6 +163,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aqi-vn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aqi-qt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="msn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -254,14 +275,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22954546" sideWeight="0.6774744" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22954546" sideWeight="0.6774744" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -290,25 +311,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="29" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.23595506" vertical-offset="877" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/budyaga/yii2-users/controllers/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="41" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.6852207" vertical-offset="0" max-vertical-offset="2958">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/AqiQtController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.66853935" vertical-offset="357" max-vertical-offset="2159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="21" selection-start="2923" selection-end="2923" vertical-scroll-proportion="2.4513109" vertical-offset="0" max-vertical-offset="2278">
@@ -381,29 +383,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/NodeController.php">
+    <entry file="file://$PROJECT_DIR$/views/aqi-vn/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="35" selection-start="2624" selection-end="2624" vertical-scroll-proportion="-7.923077" vertical-offset="1460" max-vertical-offset="2516">
-          <folding>
-            <element signature="e#35#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/node/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="40" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-5.5" vertical-offset="486" max-vertical-offset="1020">
-          <folding>
-            <element signature="e#7#28#0" expanded="true" />
-            <marker date="1460405896585" expanded="true" signature="299:417" placeholder="..." />
-            <marker date="1460405896585" expanded="true" signature="1149:1170" placeholder="..." />
-          </folding>
+        <state line="12" column="24" selection-start="315" selection-end="315" vertical-scroll-proportion="0.35018727" vertical-offset="0" max-vertical-offset="765">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/node/_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="41" selection-start="391" selection-end="391" vertical-scroll-proportion="0.26103646" vertical-offset="85" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/node/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="40" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.26779026" vertical-offset="486" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#7#28#0" expanded="true" />
+            <marker date="1460405896585" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460405896585" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/NodeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="35" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.39539346" vertical-offset="1460" max-vertical-offset="2516">
+          <folding>
+            <element signature="e#35#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/aqi-vn/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="261" selection-end="261" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/aqi-qt/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.26103646" vertical-offset="0" max-vertical-offset="663">
           <folding />
         </state>
       </provider>

@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="aqi-vn-form">
+<div class="aqi-vn-form col-md-7 col-md-offset-2">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
+    <div class="form-group text-center">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?= Html::a('Cancel', ['index'], ['class' => 'btn btn-danger']) ?>
     </div>
