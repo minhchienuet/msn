@@ -98,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-2">
-            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal"> Đăng ký </button>
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalWarning"> Đăng ký </button>
             <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button"> Hủy bỏ </a>
         </div>
     </div>
@@ -144,66 +144,22 @@ $this->params['breadcrumbs'][] = $this->title;
             </tr>
         </table>
     </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+</div>
+<div class="modal fade" id="myModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalWarningLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Congratulation!</h4>
+                <h4 class="modal-title" id="myModalWarningLabel">Congratulation!</h4>
             </div>
-            <div class="modal-body text-info">
-                Bạn đã đăng ký nhận cảnh báo thành công!
-            </div>
+                <div class="modal-body text-info">
+                    Bạn đã đăng ký nhận cảnh báo thành công!
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-    $('#tcvn').on('click', function () {
-        $("#levels_tcvn").show();
-        $("#chart_tcvn").show();
-        $("#levels_tcqt").hide();
-        $("#chart_tcqt").hide();
-    });
-    $('#tcqt').on('click', function () {
-        $("#levels_tcqt").show();
-        $("#chart_tcqt").show();
-        $("#levels_tcvn").hide();
-        $("#chart_tcvn").hide();
-    });
-
-    $('#province').on('change', function (e) {
-        var optionSelected = $("option:selected", this);
-        var province = this.value;
-        $.ajax({
-            url:"<?php echo Yii::$app->request->baseUrl. '/site/districts'?>",
-            type: "GET",
-            contentType: "JSON",
-            data: {province: province},
-            success:function(response) {
-                $('#district').html(response);
-            },
-            error: function(){
-                console.log("Error");
-            }
-        });
-    });
-    $('#district').on('change', function (e) {
-        var optionSelected = $("option:selected", this);
-        var district = this.value;
-        $.ajax({
-            url:"<?php echo Yii::$app->request->baseUrl. '/site/wards'?>",
-            type: "GET",
-            contentType: "JSON",
-            data: {district: district},
-            success:function(response) {
-                $('#ward').html(response);
-            },
-            error: function(){
-                console.log("Error");
-            }
-        });
-    });
-</script>
+<script src="/js/select_area.js"></script>
+<script src="/js/select_aqi_tc.js"></script>

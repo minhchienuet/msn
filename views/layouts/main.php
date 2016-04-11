@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <?php $this->head() ?>
 </head>
 <body>
@@ -51,7 +52,6 @@ AppAsset::register($this);
                     ],
                  ],
             ],
-            ['label' => 'Báo cáo/Thống kê', 'url' => ['/site/report']],
             ['label' => 'Đăng ký cảnh báo', 'url' => ['/site/warning']],
             ['label' => 'Nhận bản tin', 'url' => ['/site/news']],
         ],

@@ -16,18 +16,19 @@ $this->title = 'Đăng ký nhận bản tin';
     <div class="form-group row">
         <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Hà Nội</option>
-                <option>Hà Nam</option>
+            <select class="form-control" id="province">
+                <option value="">--Select--</option>
+                <?php foreach($addresses as $address): ?>
+                    <option value=" <?php echo $address->province; ?> "> <?php echo $address->province; ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
     <div class="form-group row">
-        <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+        <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Cầu Giấy</option>
-                <option>Nam Từ Liêm</option>
+            <select class="form-control" id="district">
+                <option value="">--Select--</option>
             </select>
         </div>
     </div>
@@ -35,9 +36,8 @@ $this->title = 'Đăng ký nhận bản tin';
     <div class="form-group row">
         <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Dịch Vọng</option>
-                <option>Mai Dịch</option>
+            <select class="form-control" id="ward">
+                <option value="">--Select--</option>
             </select>
         </div>
     </div>
@@ -60,21 +60,21 @@ $this->title = 'Đăng ký nhận bản tin';
     </div>
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-4">
-            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal"> Đăng ký </button>
-            <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button"> Hủy bỏ </a>
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalNews"> Đăng ký </button>
+            <a href="/" class="btn btn-danger" role="button"> Hủy bỏ </a>
         </div>
     </div>
 </form>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModalNews" tabindex="-1" role="dialog" aria-labelledby="myModalNewsLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Congratulation!</h4>
+                <h4 class="modal-title" id="myModalNewsLabel">Congratulation!</h4>
             </div>
             <div class="modal-body text-info">
-                Bạn đã đăng ký nhận cảnh báo thành công!
+                Bạn đã đăng ký nhận tin tức thành công!
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
@@ -82,3 +82,4 @@ $this->title = 'Đăng ký nhận bản tin';
         </div>
     </div>
 </div>
+<script src="/js/select_area.js"></script>

@@ -93,7 +93,11 @@ class SiteController extends Controller
     }
 
     public function actionTime(){
-        return $this->render('searchByTime');
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $addresses = Address::findBySql($sql)->all();
+        return $this->render('searchByTime',[
+            'addresses' => $addresses,
+        ]);
     }
 
     public function actionReport(){
@@ -116,7 +120,11 @@ class SiteController extends Controller
         }
 
     public function actionNews(){
-        return $this->render('news');
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $addresses = Address::findBySql($sql)->all();
+        return $this->render('news',[
+            'addresses' => $addresses,
+        ]);
     }
 
     public function actionDistricts(){

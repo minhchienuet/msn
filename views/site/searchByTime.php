@@ -14,19 +14,19 @@ $this->title = 'Tìm kiếm theo thời gian thực';
         <div class="form-group row">
             <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Hà Nội</option>
-                    <option>Hà Nam</option>
+                <select class="form-control" id="province">
+                    <option value="">--Select--</option>
+                    <?php foreach($addresses as $address): ?>
+                        <option value=" <?php echo $address->province; ?> "> <?php echo $address->province; ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
-
         <div class="form-group row">
-            <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+            <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Cầu Giấy</option>
-                    <option>Nam Từ Liêm</option>
+                <select class="form-control" id="district">
+                    <option value="">--Select--</option>
                 </select>
             </div>
         </div>
@@ -34,9 +34,8 @@ $this->title = 'Tìm kiếm theo thời gian thực';
         <div class="form-group row">
             <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
             <div class="col-md-4">
-                <select class="form-control">
-                    <option>Dịch Vọng</option>
-                    <option>Mai Dịch</option>
+                <select class="form-control" id="ward">
+                    <option value="">--Select--</option>
                 </select>
             </div>
         </div>
@@ -82,7 +81,7 @@ $this->title = 'Tìm kiếm theo thời gian thực';
         <div class="form-group row">
             <div class="col-sm-offset-5 col-sm-4">
                 <button type="button" id="search" class="btn btn-primary ">Tìm </button>
-                <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button">Hủy bỏ</a>
+                <a href="/" class="btn btn-danger" role="button">Hủy bỏ</a>
             </div>
         </div>
     </form>
@@ -92,11 +91,11 @@ $this->title = 'Tìm kiếm theo thời gian thực';
     <br><br><br><br><br><br>
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-4">
-            <a href="http://localhost/workspace/msn/web/index.php?r=site%2Ftime">Quay lại</a>
+            <a href="time">Quay lại</a>
         </div>
     </div>
 </div>
-
+<script src="/js/select_area.js"></script>
 <script>
     $('#search').on('click', function () {
         var content = $("#result").html();

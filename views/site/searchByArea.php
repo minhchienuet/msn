@@ -80,7 +80,7 @@ $this->title = 'Tìm kiếm theo khu vực';
         <div class="form-group row">
             <div class="col-sm-offset-5 col-sm-4">
                 <button type="button" id="search" class="btn btn-primary">Tìm </button>
-                <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button">Hủy bỏ</a>
+                <a href="/" class="btn btn-danger" role="button">Hủy bỏ</a>
             </div>
         </div>
     </form>
@@ -92,46 +92,14 @@ $this->title = 'Tìm kiếm theo khu vực';
         <div class="col-sm-offset-5 col-sm-4">
             <button type="button" id="export_file" class="btn btn-primary">Xuất File </button>
             <button type="button" id="statistic" class="btn btn-primary">Thống kê </button>
-            <a href="http://localhost/workspace/msn/web/index.php?r=site%2Farea" class="btn btn-danger" role="button">Quay lại</a>
+            <a href="area" class="btn btn-danger" role="button">Quay lại</a>
         </div>
     </div>
 </div>
-
+<script src="/js/select_area.js"></script>
 <script>
     $('#search').on('click', function () {
         var content = $("#result").html();
         $("#search_form").replaceWith(content);
-    });
-    $('#province').on('change', function (e) {
-        var optionSelected = $("option:selected", this);
-        var province = this.value;
-        $.ajax({
-            url:"<?php echo Yii::$app->request->baseUrl. '/site/districts'?>",
-            type: "GET",
-            contentType: "JSON",
-            data: {province: province},
-            success:function(response) {
-                $('#district').html(response);
-            },
-            error: function(){
-                console.log("Error");
-            }
-        });
-    });
-    $('#district').on('change', function (e) {
-        var optionSelected = $("option:selected", this);
-        var district = this.value;
-        $.ajax({
-            url:"<?php echo Yii::$app->request->baseUrl. '/site/wards'?>",
-            type: "GET",
-            contentType: "JSON",
-            data: {district: district},
-            success:function(response) {
-                $('#ward').html(response);
-            },
-            error: function(){
-                console.log("Error");
-            }
-        });
     });
 </script>

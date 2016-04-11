@@ -47,7 +47,7 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
         <div class="form-group row">
             <div class="col-sm-offset-5 col-sm-4">
                 <button type="button" id="search" class="btn btn-primary ">Tìm </button>
-                <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button">Hủy bỏ</a>
+                <a href="/" class="btn btn-danger" role="button">Hủy bỏ</a>
             </div>
         </div>
     </form>
@@ -98,28 +98,15 @@ $this->title = 'Tìm kiếm theo mức độ ô nhiễm';
     <br><br><br><br><br><br>
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-4">
-            <a href="http://localhost/workspace/msn/web/index.php?r=site%2Faqi">Quay lại</a>
+            <a href="aqi">Quay lại</a>
         </div>
     </div>
 </div>
-
+<script src="/js/select_aqi_tc.js"></script>
 <script>
-$(document).ready(function(){
-    $('#tcvn').on('click', function () {
-        $('#levels_tcvn').show();
-        $('#chart_tcvn').show();
-        $('#levels_tcqt').hide();
-        $('#chart_tcqt').hide();
-    });
-    $('#tcqt').on('click', function () {
-        $('#levels_tcqt').show();
-        $('#chart_tcqt').show();
-        $('#levels_tcvn').hide();
-        $('#chart_tcvn').hide()
-    });
     $('#search').on('click', function () {
         var content = $("#result").html();
         $("#search_form").replaceWith(content);
     });
-});
+
 </script>
