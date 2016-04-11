@@ -56,23 +56,29 @@ AppAsset::register($this);
             ['label' => 'Nhận bản tin', 'url' => ['/site/news']],
         ],
         ]);
-    ?>
-    <?php
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' =>[
-            Yii::$app->user->isGuest ?
-                ['label' => 'Đăng nhập', 'url' => ['/login']] :
-                [
-                    'label' => ' '. Yii::$app->user->identity->email . ' ',
-                    'items'=>[
-                        ['label' => 'Setting Account', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
-                        ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
+
+    if(Yii::$app->user->isGuest){
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' =>[
+                ['label' => 'Đăng nhập', 'url' => ['/login']],
+                ['label' => 'Đăng ký', 'url' => ['/signup']],
+            ]
+        ]);
+    }else{
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' =>[
+                    [
+                        'label' => ' '. Yii::$app->user->identity->email . ' ',
+                        'items'=>[
+                            ['label' => 'Setting Account', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                            ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
+                        ],
                     ],
-                ],
-            ['label' => 'Đăng ký', 'url' => ['/signup']],
-        ]
-    ]);
+            ]
+        ]);
+    }
     NavBar::end();
     ?>
     <div class="col-lg-12">

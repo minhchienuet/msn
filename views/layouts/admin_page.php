@@ -49,13 +49,19 @@ AppAsset::register($this);
             ['label' => 'Bản tin', 'url' => ['/site/news']],
         ],
     ]);
-    ?>
-    <?php
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' =>[
-            Yii::$app->user->isGuest ?
-                ['label' => 'Đăng nhập', 'url' => ['/login']] :
+
+    if(Yii::$app->user->isGuest){
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' =>[
+                ['label' => 'Đăng nhập', 'url' => ['/login']],
+                ['label' => 'Đăng ký', 'url' => ['/signup']],
+            ]
+        ]);
+    }else{
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' =>[
                 [
                     'label' => ' '. Yii::$app->user->identity->email . ' ',
                     'items'=>[
@@ -63,11 +69,11 @@ AppAsset::register($this);
                         ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
                     ],
                 ],
-            ['label' => 'Đăng ký', 'url' => ['/signup']],
-        ]
-    ]);
+            ]
+        ]);
+    }
     NavBar::end();
-    ?>
+?>
 <div class="col-lg-12">
     <?php if(Yii::$app->session->hasFlash('success')): ?>
         <div class="alert alert-success alert-block">
