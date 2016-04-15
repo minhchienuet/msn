@@ -150,4 +150,24 @@ class SiteController extends Controller
             }
         }
     }
+
+    public function actionSearch(){
+        if(isset($_GET['keyword'])) {
+            $keyword = trim($_GET['keyword']);
+            $query = Address::find();
+            $addresses = $query->orFilterWhere(['like', 'province', $keyword])
+                                ->orFilterWhere(['like', 'district', $keyword])
+                                ->orFilterWhere(['like', 'ward', $keyword])->all();
+            if($addresses){
+                foreach($addresses as $address){
+                    echo "<li class='list-group-item'>";
+                        echo "<a href='#' value='".$address->id."'>".$address->province. ' - '.$address->district.' - '.$address->ward."</a>";
+                    echo "</li>";
+                }
+            }else{
+                echo "No result.";
+            }
+
+        }
+    }
 }

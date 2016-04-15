@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\bootstrap\Modal;
 
 AppAsset::register($this);
 ?>
@@ -29,7 +30,7 @@ AppAsset::register($this);
         'brandLabel' => 'MSN',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-default  navbar-top',
+            'class' => 'navbar-default navbar-top',
         ],
     ]);
     echo Nav::widget([
@@ -52,11 +53,35 @@ AppAsset::register($this);
                     ],
                  ],
             ],
-            ['label' => 'Đăng ký cảnh báo', 'url' => ['/site/warning']],
+            ['label' => 'Đăng ký cảnh báo', 'url' => ['/warning/register']],
             ['label' => 'Nhận bản tin', 'url' => ['/site/news']],
         ],
         ]);
+?>
+<div id="search-bar" class="navbar-form navbar-left">
+        <script language="javascript">
+            function searchFocus() {
+                if (document.sform.stext.value == 'Nhập địa chỉ') {
+                    document.sform.stext.value = '';
+                }
+            }
+            function searchBlur() {
+                if (document.sform.stext.value == '') {
+                    document.sform.stext.value = 'Nhập địa chỉ';
+                }
+            }
+        </script>
+        <form name="sform">
+            <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext"  value="Nhập địa chỉ">
+        </form>
 
+        <div id="search-resultbox" style="display: none;" class="modal-content">
+            <ul class="list-group search-items">
+            </ul>
+        </div>
+</div>
+
+<?php
     if(Yii::$app->user->isGuest){
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
@@ -81,6 +106,7 @@ AppAsset::register($this);
     }
     NavBar::end();
     ?>
+
     <div class="col-lg-12">
         <?php if(Yii::$app->session->hasFlash('success')): ?>
             <div class="alert alert-success alert-block">
@@ -107,4 +133,5 @@ AppAsset::register($this);
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="/js/search_index.js"></script>
 <?php $this->endPage() ?>

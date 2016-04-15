@@ -41,8 +41,8 @@ $config = [
                 ],
                 'facebook' => [
                     'class' => 'budyaga\users\components\oauth\Facebook',
-                    'clientId' => '942220362522810',
-                    'clientSecret' => 'eec6149a5839c797fff3c6f40392079e',
+                    'clientId' => '809012735898619',
+                    'clientSecret' => '7b7447141776a39e7dba09a6369798c0',
                 ],
             ],
         ],
