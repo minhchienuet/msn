@@ -11,6 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Warnings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
+<h5 class="text-info text-center">* is required</h5>
 <form class="form-horizontal" method="post">
     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
@@ -20,8 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-4">
             <select class="form-control" name='province' id="province">
                 <option value="">--Select--</option>
-                <?php foreach($addresses as $address): ?>
-                    <option value="<?php echo $address->province; ?>"><?php echo $address->province; ?></option>
+                <?php foreach($provinces as $province): ?>
+                    <option value="<?php echo $province->province; ?>"><?php echo $province->province; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -51,6 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <option value="">--Select--</option>
             </select>
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
@@ -63,32 +65,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <input type="radio" name="standard" id="tcqt" value="TCQT">TC Quốc Tế
             </label>
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
-    <div class="form-group row">
-        <div id="levels_tcvn" hidden="hidden">
-            <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
-            <div class='col-md-4'>
-                <select class='form-control' name="level" id="level">
-                    <option value="">--Select--</option>
-                    <?php foreach($aqi_vn as $aqi): ?>
-                        <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </div>
+    <div class="form-group row" id="level">
 
-        <div id="levels_tcqt" hidden="hidden">
-            <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
-            <div class='col-md-4'>
-                <select class='form-control' name="level" id="level">
-                    <option value="">--Select--</option>
-                    <?php foreach($aqi_qt as $aqi): ?>
-                        <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </div>
     </div>
 
     <div class="form-group row">
@@ -101,6 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <input type="radio" name="time_interval" id="byHour" value="byHour">Theo giờ
             </label>
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
@@ -108,6 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-4">
             <input type="email" class="form-control" name="email" id="email" value="<?php echo Yii::$app->user->identity->email; ?>">
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
@@ -118,6 +101,31 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </form>
 <br/><br>
+<div id="levels_tcvn" hidden="hidden">
+    <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
+    <div class='col-md-4'>
+        <select class='form-control' name="level" id="level_vn">
+            <option value="">--Select--</option>
+            <?php foreach($aqi_vn as $aqi): ?>
+                <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
+</div>
+
+<div id="levels_tcqt" hidden="hidden">
+    <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
+    <div class='col-md-4'>
+        <select class='form-control' name="level" id="level_qt">
+            <option value="">--Select--</option>
+            <?php foreach($aqi_qt as $aqi): ?>
+                <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
+</div>
 <div id="chart_tcvn" hidden="hidden">
     <div class="col-md-offset-3 col-md-6">
         <table class="table table-bordered">

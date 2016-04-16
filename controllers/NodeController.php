@@ -75,10 +75,22 @@ class NodeController extends Controller
         $address = new Address();
 
         if ($node->load(Yii::$app->request->post()) && $address->load(Yii::$app->request->post()) && Model::validateMultiple([$node, $address])) {
-                $address->save(false);// skip validation as model is already validated
-                $node->address_id = $address->id; // no need for validation rule on user_id as you set it yourself
-                $node->save(false);
-                return $this->redirect(['view', 'id' => $node->id]);
+            //kiem tra xem address (province,district, ward đa ton tai chua
+            $sql = "SELECT * FROM addresses
+                   WHERE province = '".$address->province."' AND
+                         district = '".$address->district."' AND
+                         ward = '".$address->ward."' ";
+            $check = Address::findBySql($sql)->one();
+            if($check){ // neu da ton tai
+                $node->address_id = $check->id;
+                    $node->save(false);
+                    return $this->redirect(['view', 'id' => $node->id]);
+            }
+            //neu chua ton tai, tao address moi
+            $address->save(false);// skip validation as model is already validated
+            $node->address_id = $address->id; // no need for validation rule on user_id as you set it yourself
+            $node->save(false);
+            return $this->redirect(['view', 'id' => $node->id]);
 
         } else {
             return $this->render('create', [

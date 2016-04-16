@@ -13,6 +13,7 @@ use yii\base\Model;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
 
 /**
  * WarningController implements the CRUD actions for Warning model.
@@ -62,6 +63,23 @@ class WarningController extends Controller
         ]);
     }
 
+    public function actionList()
+    {
+        $id = Yii::$app->user->identity->id;
+        $sql = "SELECT * FROM warnings WHERE user_id = '".$id."' ORDER BY id ";
+        $query = Warning::findBySql($sql);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 1,
+            ],
+        ]);
+        return $this->render('list', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single Warning model.
      * @param integer $id
@@ -85,29 +103,27 @@ class WarningController extends Controller
         $aqi_vn = AqiVn::find()->all();
         $aqi_qt = AqiQt::find()->all();
         $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
-        $addresses = Address::findBySql($sql)->all();
-
+        $provinces = Address::findBySql($sql)->all();
         if(Yii::$app->request->post()){
-            echo $a;
             $model->user_id = Yii::$app->request->post('user_id');
             $model->node_id = Yii::$app->request->post('node_id');
             $model->standard = Yii::$app->request->post('standard');
             $model->level = Yii::$app->request->post('level');
             $model->time_interval = Yii::$app->request->post('time_interval');
             $model->email = Yii::$app->request->post('email');
-            if($model->save()){
+            if($model->validate() && $model->save()){
                 Yii::$app->session->setFlash('success', 'Register Successfully! ');
                  return $this->redirect(['view', 'id' => $model->id]);
             }else{
-                Yii::$app->session->setFlash('error', 'Oops! Something wrong! ');
-
+                Yii::$app->session->setFlash('error', "Oops! Something wrong! Please fill all fields are required! ");
+                return $this->redirect('register');
             }
         } else {
             return $this->render('register',[
-                'model' => $model,
+                'model'  => $model,
                 'aqi_vn' => $aqi_vn,
                 'aqi_qt' => $aqi_qt,
-                'addresses' => $addresses,
+                'provinces' => $provinces,
             ]);
         }
     }
@@ -120,13 +136,40 @@ class WarningController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+//        $model = $this->findModel($id);
+//
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['view', 'id' => $model->id]);
+//        } else {
+//            return $this->render('update', [
+//                'model' => $model,
+//            ]);
+//        }
+        $model =  $this->findModel($id);
+        $aqi_vn = AqiVn::find()->all();
+        $aqi_qt = AqiQt::find()->all();
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $provinces = Address::findBySql($sql)->all();
+        if(Yii::$app->request->post()){
+            $model->user_id = Yii::$app->request->post('user_id');
+            $model->node_id = Yii::$app->request->post('node_id');
+            $model->standard = Yii::$app->request->post('standard');
+            $model->level = Yii::$app->request->post('level');
+            $model->time_interval = Yii::$app->request->post('time_interval');
+            $model->email = Yii::$app->request->post('email');
+            if($model->validate() && $model->save()){
+                Yii::$app->session->setFlash('success', 'Update Successfully! ');
+                return $this->redirect(['view', 'id' => $model->id]);
+            }else{
+                Yii::$app->session->setFlash('error', "Oops! Something wrong! Please fill all fields are required! ");
+                return $this->redirect(['update','id' => $model->id]);
+            }
         } else {
-            return $this->render('update', [
+            return $this->render('update',[
                 'model' => $model,
+                'aqi_vn' => $aqi_vn,
+                'aqi_qt' => $aqi_qt,
+                'provinces' => $provinces,
             ]);
         }
     }

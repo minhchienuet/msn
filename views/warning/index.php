@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Warning', ['create'], ['class' => 'btn btn-success']) ?>
+    <p class="pull-right">
+        <?= Html::a('Register Warning', ['register'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'node_id',
             'standard',
             'level',
-            // 'time_interval',
-            // 'email:email',
+            'time_interval',
+            'email:email',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

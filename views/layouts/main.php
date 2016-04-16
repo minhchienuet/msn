@@ -97,7 +97,8 @@ AppAsset::register($this);
                     [
                         'label' => ' '. Yii::$app->user->identity->email . ' ',
                         'items'=>[
-                            ['label' => 'Setting Account', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                            ['label' => 'Cài đặt tài khoản', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                            ['label' => 'Danh sách cảnh báo', 'url' => ['/warning/list']],
                             ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
                         ],
                     ],
