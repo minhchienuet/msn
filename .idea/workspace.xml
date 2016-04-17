@@ -39,7 +39,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="7" selection-start="5564" selection-end="5564" vertical-scroll-proportion="0.6084453" vertical-offset="2063" max-vertical-offset="2584">
+            <state line="31" column="62" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.71785027" vertical-offset="153" max-vertical-offset="2567">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -376,7 +376,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="7" selection-start="5564" selection-end="5564" vertical-scroll-proportion="0.6084453" vertical-offset="2063" max-vertical-offset="2584">
+        <state line="31" column="62" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.71785027" vertical-offset="153" max-vertical-offset="2567">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />

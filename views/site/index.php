@@ -4,7 +4,7 @@
     });
 </script>
 
-<div id="search-bar">
+<div id="search-bar" >
         <script language="javascript">
             function searchFocus() {
                 if (document.sform.stext.value == 'Nhập địa chỉ') {
@@ -20,14 +20,13 @@
         <form name="sform">
             <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext" value="Nhập địa chỉ">
         </form>
-
-        <div id="search-resultbox" style="display: none;" class="modal-content">
+        <div id="search-resultbox" class="col-md-4" style="display: none;" class="modal-content">
             <ul class="list-group search-items">
             </ul>
         </div>
 </div>
 <br>
-<div class="container-fluid" id="map" style=" height: 600px; weight: 100px"></div>
+<div id="map" style=" height: 600px; weight: 100px"></div>
 
 <script src="/js/leaflet/leaflet.js"></script>
 <script type="text/javascript" src="/js/smoothie.js"></script>
