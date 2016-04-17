@@ -4,6 +4,29 @@
     });
 </script>
 
+<div id="search-bar">
+        <script language="javascript">
+            function searchFocus() {
+                if (document.sform.stext.value == 'Nhập địa chỉ') {
+                    document.sform.stext.value = '';
+                }
+            }
+            function searchBlur() {
+                if (document.sform.stext.value == '') {
+                    document.sform.stext.value = 'Nhập địa chỉ';
+                }
+            }
+        </script>
+        <form name="sform">
+            <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext" value="Nhập địa chỉ">
+        </form>
+
+        <div id="search-resultbox" style="display: none;" class="modal-content">
+            <ul class="list-group search-items">
+            </ul>
+        </div>
+</div>
+<br>
 <div class="container-fluid" id="map" style=" height: 600px; weight: 100px"></div>
 
 <script src="/js/leaflet/leaflet.js"></script>
@@ -38,8 +61,7 @@
         );
         smoothie.streamTo(canvasEl, 1000 /*delay*/);
     }
-</script>
-<script>
+
     function startTime() {
         var map = L.map('map').setView([21.04056, 105.78483], 9);
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaHV5aG9hbmdidDIiLCJhIjoiY2lsb3puc2kxMDhvOXU5bTF3YzNzbDNydCJ9.meN01vk94NEjbSdhgZ6XhA', {

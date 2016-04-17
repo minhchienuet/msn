@@ -60,28 +60,6 @@ AppAsset::register($this);
         ],
         ]);
 ?>
-<div id="search-bar" class="navbar-form navbar-left">
-        <script language="javascript">
-            function searchFocus() {
-                if (document.sform.stext.value == 'Nhập địa chỉ') {
-                    document.sform.stext.value = '';
-                }
-            }
-            function searchBlur() {
-                if (document.sform.stext.value == '') {
-                    document.sform.stext.value = 'Nhập địa chỉ';
-                }
-            }
-        </script>
-        <form name="sform">
-            <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext" value="Nhập địa chỉ">
-        </form>
-
-        <div id="search-resultbox" style="display: none;" class="modal-content">
-            <ul class="list-group search-items">
-            </ul>
-        </div>
-</div>
 
 <?php
     if(Yii::$app->user->isGuest){
