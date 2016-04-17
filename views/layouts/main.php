@@ -20,6 +20,8 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="stylesheet" href="/js/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="/js/bootstrap/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <?php $this->head() ?>
 </head>
@@ -72,7 +74,7 @@ AppAsset::register($this);
             }
         </script>
         <form name="sform">
-            <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext"  value="Nhập địa chỉ">
+            <input class="form-control" onfocus="searchFocus();" onblur="searchBlur();" type="text" name="stext" value="Nhập địa chỉ">
         </form>
 
         <div id="search-resultbox" style="display: none;" class="modal-content">
@@ -134,5 +136,5 @@ AppAsset::register($this);
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="/js/search_index.js"></script>
+<!--<script src="/js/search_index.js"></script>-->
 <?php $this->endPage() ?>

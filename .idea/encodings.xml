@@ -4,7 +4,9 @@
     <file url="file://$PROJECT_DIR$/views/site/img" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/site/result.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/img" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/php" charset="UTF-8" />
   </component>
 </project>
 
