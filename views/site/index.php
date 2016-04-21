@@ -26,7 +26,7 @@
         </div>
 </div>
 <br>
-<div id="map" style=" height: 600px; weight: 100px"></div>
+<div id="map" style="height: 600px;"></div>
 
 <script src="/js/leaflet/leaflet.js"></script>
 <script type="text/javascript" src="/js/smoothie.js"></script>
@@ -86,7 +86,7 @@
 
                 var hospitalIcon = L.icon({
                     iconUrl: 'img/icon.png',
-                    iconSize: [26, 26],
+                    iconSize: [46, 46],
                     iconAnchor: [16, 31],
                     popupAnchor: [0, -28],
                     className: "canvas-" + data[index].stt
