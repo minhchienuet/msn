@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\Node;
+use budyaga\users\models\Node;
 use Yii;
 use app\models\Warning;
 use app\models\Address;
@@ -35,14 +35,13 @@ class WarningController extends Controller
             ],
             'access' => [
                 'class' => \yii\filters\AccessControl::className(),
-                'only' => ['index','register','update','view'],
+                'only' => ['index'],
                 'rules' => [
-                    // allow authenticated users
                     [
+                        'actions' => ['index'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['allWarnings'],
                     ],
-                    // everything else is denied
                 ],
             ],
         ];
@@ -200,23 +199,6 @@ class WarningController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-
-    public function actionNodes(){
-        $province = trim($_GET['province']);
-        $district = trim($_GET['district']);
-        $ward = trim($_GET['ward']);
-        $sql = "SELECT * FROM addresses
-                    WHERE province = '".$province."' AND district = '".$district."' AND ward = '".$ward."'
-                    ORDER BY district ASC";
-        $address = Address::findBySql($sql)->one();
-        $sql = "SELECT * FROM nodes WHERE address_id = '".$address->id."' ";
-        $nodes = Node::findBySql($sql)->all();
-        echo "<option value=''>--Select--</option>";
-        foreach($nodes as $node){
-            echo "<option data-toggle = 'tooltip' data-placement = 'left' title='".$node->description."'
-                        value='".$node->id."'>".$node->name."</option>";
         }
     }
 }

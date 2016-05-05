@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\AqiQt;
 use app\models\AqiVn;
+use budyaga\users\models\Node;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -19,12 +20,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout','report'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['report'],
+                        'allow' => true,
+                        'roles' => ['reportView'],
                     ],
                 ],
             ],
@@ -104,20 +110,9 @@ class SiteController extends Controller
         return $this->render('report');
     }
 
-    public function actionWarning(){
-        $aqi_vn = AqiVn::find()->all();
-        $aqi_qt = AqiQt::find()->all();
-        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
-        $addresses = Address::findBySql($sql)->all();
-        return $this->render('warning',[
-            'aqi_vn' => $aqi_vn,
-            'aqi_qt' => $aqi_qt,
-            'addresses' => $addresses,
-        ]);
-    }
     public function actionResult(){
             return $this->render('result');
-        }
+    }
 
     public function actionNews(){
         $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
@@ -150,24 +145,20 @@ class SiteController extends Controller
             }
         }
     }
-
-//    public function actionSearch(){
-//        if(isset($_GET['keyword'])) {
-//            $keyword = trim($_GET['keyword']);
-//            $query = Address::find();
-//            $addresses = $query->orFilterWhere(['like', 'province', $keyword])
-//                                ->orFilterWhere(['like', 'district', $keyword])
-//                                ->orFilterWhere(['like', 'ward', $keyword])->all();
-//            if($addresses){
-//                foreach($addresses as $address){
-//                    echo "<li class='list-group-item'>";
-//                        echo "<a href='#' value='".$address->id."'>".$address->province. ' - '.$address->district.' - '.$address->ward."</a>";
-//                    echo "</li>";
-//                }
-//            }else{
-//                echo "No result.";
-//            }
-//
-//        }
-//    }
+    public function actionNodes(){
+        $province = trim($_GET['province']);
+        $district = trim($_GET['district']);
+        $ward = trim($_GET['ward']);
+        $sql = "SELECT * FROM addresses
+                    WHERE province = '".$province."' AND district = '".$district."' AND ward = '".$ward."'
+                    ORDER BY district ASC";
+        $address = Address::findBySql($sql)->one();
+        $sql = "SELECT * FROM nodes WHERE address_id = '".$address->id."' ";
+        $nodes = Node::findBySql($sql)->all();
+        echo "<option value=''>--Select--</option>";
+        foreach($nodes as $node){
+            echo "<option data-toggle = 'tooltip' data-placement = 'left' title='".$node->description."'
+                        value='".$node->id."'>".$node->name."</option>";
+        }
+    }
 }

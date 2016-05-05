@@ -63,7 +63,7 @@ abstract class HTMLPurifier_Injector
     /**
      * Rewind to a spot to re-perform processing. This is useful if you
      * deleted a node, and now need to see if this change affected any
-     * earlier nodes. Rewinding does not affect other injectors, and can
+     * earlier node. Rewinding does not affect other injectors, and can
      * result in infinite loops if not used carefully.
      * @param bool|int $offset
      * @warning HTML Purifier will prevent you from fast-forwarding with this

@@ -12,15 +12,15 @@ class m160407_185403_create_nodes_table extends Migration
      */
     public function up()
     {
-        $this->createTable('nodes', [
+        $this->createTable('node', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'address_id' => $this->integer(),
             'description' => $this->string()
         ]);
         $this->addForeignKey(
-            'fk-nodes-address_id',
-            'nodes',
+            'fk-node-address_id',
+            'node',
             'address_id',
             'addresses',
             'id',
@@ -34,6 +34,6 @@ class m160407_185403_create_nodes_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('nodes');
+        $this->dropTable('node');
     }
 }

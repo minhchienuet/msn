@@ -106,7 +106,7 @@ jQuery.event = {
 			special, handlers, type, namespaces, origType,
 			elemData = dataPriv.get( elem );
 
-		// Don't attach events to noData or text/comment nodes (but allow plain objects)
+		// Don't attach events to noData or text/comment node (but allow plain objects)
 		if ( !elemData ) {
 			return;
 		}

@@ -24,7 +24,7 @@ define( [
  * Requiring all parts of a selector to match elements under context
  *   (e.g., $div.find("div > *") now matches children of $div)
  * Matching against non-elements
- * Reliable sorting of disconnected nodes
+ * Reliable sorting of disconnected node
  * querySelectorAll bug fixes (e.g., unreliable :focus on WebKit)
  *
  * If any of these are unacceptable tradeoffs, either use Sizzle or
@@ -60,7 +60,7 @@ function sortOrder( a, b ) {
 		// Otherwise we know they are disconnected
 		1;
 
-	// Disconnected nodes
+	// Disconnected node
 	if ( compare & 1 ) {
 
 		// Choose the first element that is related to our preferred document
@@ -153,7 +153,7 @@ jQuery.extend( {
 			// If no nodeType, this is expected to be an array
 			while ( ( node = elem[ i++ ] ) ) {
 
-				// Do not traverse comment nodes
+				// Do not traverse comment node
 				ret += jQuery.text( node );
 			}
 		} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
@@ -164,7 +164,7 @@ jQuery.extend( {
 			return elem.nodeValue;
 		}
 
-		// Do not include comment or processing instruction nodes
+		// Do not include comment or processing instruction node
 
 		return ret;
 	},

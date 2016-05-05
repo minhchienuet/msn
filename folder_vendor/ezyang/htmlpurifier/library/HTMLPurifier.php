@@ -10,8 +10,8 @@
  *  -# Executing various strategies on the tokens:
  *      -# Removing all elements not in the whitelist,
  *      -# Making the tokens well-formed,
- *      -# Fixing the nesting of the nodes, and
- *      -# Validating attributes of the nodes; and
+ *      -# Fixing the nesting of the node, and
+ *      -# Validating attributes of the node; and
  *  -# Generating HTML from the purified tokens.
  *
  * However, most users will only need to interface with the HTMLPurifier

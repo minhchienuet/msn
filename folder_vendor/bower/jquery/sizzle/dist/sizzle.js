@@ -400,7 +400,7 @@ function siblingCheck( a, b ) {
 			( ~b.sourceIndex || MAX_NEGATIVE ) -
 			( ~a.sourceIndex || MAX_NEGATIVE );
 
-	// Use IE sourceIndex if available on both nodes
+	// Use IE sourceIndex if available on both node
 	if ( diff ) {
 		return diff;
 	}
@@ -474,7 +474,7 @@ function testContext( context ) {
 support = Sizzle.support = {};
 
 /**
- * Detects XML nodes
+ * Detects XML node
  * @param {Element|Object} elem An element or a document
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
@@ -584,7 +584,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			if ( typeof context.getElementsByTagName !== "undefined" ) {
 				return context.getElementsByTagName( tag );
 
-			// DocumentFragment nodes don't have gEBTN
+			// DocumentFragment node don't have gEBTN
 			} else if ( support.qsa ) {
 				return context.querySelectorAll( tag );
 			}
@@ -594,7 +594,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			var elem,
 				tmp = [],
 				i = 0,
-				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
+				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment node too
 				results = context.getElementsByTagName( tag );
 
 			// Filter out possible comments
@@ -779,7 +779,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// Otherwise we know they are disconnected
 			1;
 
-		// Disconnected nodes
+		// Disconnected node
 		if ( compare & 1 ||
 			(!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
 
@@ -800,7 +800,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		return compare & 4 ? -1 : 1;
 	} :
 	function( a, b ) {
-		// Exit early if the nodes are identical
+		// Exit early if the node are identical
 		if ( a === b ) {
 			hasDuplicate = true;
 			return 0;
@@ -813,7 +813,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			ap = [ a ],
 			bp = [ b ];
 
-		// Parentless nodes are either documents or disconnected
+		// Parentless node are either documents or disconnected
 		if ( !aup || !bup ) {
 			return a === document ? -1 :
 				b === document ? 1 :
@@ -823,7 +823,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
 				0;
 
-		// If the nodes are siblings, we can do a quick check
+		// If the node are siblings, we can do a quick check
 		} else if ( aup === bup ) {
 			return siblingCheck( a, b );
 		}
@@ -844,10 +844,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 		}
 
 		return i ?
-			// Do a sibling check if the nodes have a common ancestor
+			// Do a sibling check if the node have a common ancestor
 			siblingCheck( ap[i], bp[i] ) :
 
-			// Otherwise nodes in our document sort first
+			// Otherwise node in our document sort first
 			ap[i] === preferredDoc ? -1 :
 			bp[i] === preferredDoc ? 1 :
 			0;
@@ -877,9 +877,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		try {
 			var ret = matches.call( elem, expr );
 
-			// IE 9's matchesSelector returns false on disconnected nodes
+			// IE 9's matchesSelector returns false on disconnected node
 			if ( ret || support.disconnectedMatch ||
-					// As well, disconnected nodes are said to be in a document
+					// As well, disconnected node are said to be in a document
 					// fragment in IE 9
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
@@ -957,7 +957,7 @@ Sizzle.uniqueSort = function( results ) {
 };
 
 /**
- * Utility function for retrieving the text value of an array of DOM nodes
+ * Utility function for retrieving the text value of an array of DOM node
  * @param {Array|Element} elem
  */
 getText = Sizzle.getText = function( elem ) {
@@ -969,7 +969,7 @@ getText = Sizzle.getText = function( elem ) {
 	if ( !nodeType ) {
 		// If no nodeType, this is expected to be an array
 		while ( (node = elem[i++]) ) {
-			// Do not traverse comment nodes
+			// Do not traverse comment node
 			ret += getText( node );
 		}
 	} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
@@ -986,7 +986,7 @@ getText = Sizzle.getText = function( elem ) {
 	} else if ( nodeType === 3 || nodeType === 4 ) {
 		return elem.nodeValue;
 	}
-	// Do not include comment or processing instruction nodes
+	// Do not include comment or processing instruction node
 
 	return ret;
 };
@@ -1414,7 +1414,7 @@ Expr = Sizzle.selectors = {
 		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content node (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -1612,7 +1612,7 @@ function addCombinator( matcher, combinator, base ) {
 			var oldCache, uniqueCache, outerCache,
 				newCache = [ dirruns, doneName ];
 
-			// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
+			// We can't set arbitrary data on XML node, so they don't benefit from combinator caching
 			if ( xml ) {
 				while ( (elem = elem[ dir ]) ) {
 					if ( elem.nodeType === 1 || checkNonElements ) {
@@ -2079,7 +2079,7 @@ support.detectDuplicates = !!hasDuplicate;
 setDocument();
 
 // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
-// Detached nodes confoundingly follow *each other*
+// Detached node confoundingly follow *each other*
 support.sortDetached = assert(function( div1 ) {
 	// Should return 1, but returns 4 (following)
 	return div1.compareDocumentPosition( document.createElement("div") ) & 1;

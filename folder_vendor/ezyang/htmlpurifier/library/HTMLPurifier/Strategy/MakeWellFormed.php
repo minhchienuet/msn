@@ -555,7 +555,7 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
         }
 
         // $token is now an array with the following form:
-        // array(number nodes to delete, new node 1, new node 2, ...)
+        // array(number node to delete, new node 1, new node 2, ...)
 
         $delete = array_shift($token);
         list($old, $r) = $this->zipper->splice($this->token, $delete, $token);

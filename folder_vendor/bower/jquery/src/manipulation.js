@@ -375,7 +375,7 @@ jQuery.fn.extend( {
 				// Prevent memory leaks
 				jQuery.cleanData( getAll( elem, false ) );
 
-				// Remove any remaining nodes
+				// Remove any remaining node
 				elem.textContent = "";
 			}
 		}
@@ -412,7 +412,7 @@ jQuery.fn.extend( {
 					for ( ; i < l; i++ ) {
 						elem = this[ i ] || {};
 
-						// Remove element nodes and prevent memory leaks
+						// Remove element node and prevent memory leaks
 						if ( elem.nodeType === 1 ) {
 							jQuery.cleanData( getAll( elem, false ) );
 							elem.innerHTML = value;

@@ -35,7 +35,7 @@
  *  -# Has the entire document structure (html and body not needed).
  *
  * @par
- * However, DOM is helpful in that it makes it easy to move around nodes
+ * However, DOM is helpful in that it makes it easy to move around node
  * without a lot of lookaheads to see when a tag is closed. This is a
  * limitation of the token system and some workarounds would be nice.
  */

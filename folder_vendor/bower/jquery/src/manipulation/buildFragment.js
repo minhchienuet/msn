@@ -21,7 +21,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 		if ( elem || elem === 0 ) {
 
-			// Add nodes directly
+			// Add node directly
 			if ( jQuery.type( elem ) === "object" ) {
 
 				// Support: Android<4.1, PhantomJS<2
@@ -32,7 +32,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			} else if ( !rhtml.test( elem ) ) {
 				nodes.push( context.createTextNode( elem ) );
 
-			// Convert html into DOM nodes
+			// Convert html into DOM node
 			} else {
 				tmp = tmp || fragment.appendChild( context.createElement( "div" ) );
 
@@ -54,7 +54,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				// Remember the top-level container
 				tmp = fragment.firstChild;
 
-				// Ensure the created nodes are orphaned (#12392)
+				// Ensure the created node are orphaned (#12392)
 				tmp.textContent = "";
 			}
 		}

@@ -129,8 +129,8 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
      */
     protected function createStartNode($node, &$tokens, $collect)
     {
-        // intercept non element nodes. WE MUST catch all of them,
-        // but we're not getting the character reference nodes because
+        // intercept non element node. WE MUST catch all of them,
+        // but we're not getting the character reference node because
         // those should have been preprocessed
         if ($node->nodeType === XML_TEXT_NODE) {
             $tokens[] = $this->factory->createText($node->data);
@@ -160,7 +160,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
             $tokens[] = $this->factory->createComment($node->data);
             return false;
         } elseif ($node->nodeType !== XML_ELEMENT_NODE) {
-            // not-well tested: there may be other nodes we have to grab
+            // not-well tested: there may be other node we have to grab
             return false;
         }
 

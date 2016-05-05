@@ -11,7 +11,7 @@
  * tags and global child exclusions.
  *
  * The first major objective of this strategy is to iterate through all
- * the nodes and determine whether or not their children conform to the
+ * the node and determine whether or not their children conform to the
  * element's definition.  If they do not, the child definition may
  * optionally supply an amended list of elements that is valid or
  * require that the entire node be deleted (and the previous node
@@ -25,7 +25,7 @@
  * @note Whether or not unrecognized children are silently dropped or
  *       translated into text depends on the child definitions.
  *
- * @todo Enable nodes to be bubbled out of the structure.  This is
+ * @todo Enable node to be bubbled out of the structure.  This is
  *       easier with our new algorithm.
  */
 
@@ -73,7 +73,7 @@ class HTMLPurifier_Strategy_FixNesting extends HTMLPurifier_Strategy
         $exclude_stack = array($definition->info_parent_def->excludes);
 
         // variable that contains the start token while we are processing
-        // nodes. This enables error reporting to do its job
+        // node. This enables error reporting to do its job
         $node = $top_node;
         // dummy token
         list($token, $d) = $node->toTokenPair();
@@ -152,7 +152,7 @@ class HTMLPurifier_Strategy_FixNesting extends HTMLPurifier_Strategy
                 } else {
                     $node->children = $result;
                     if ($e) {
-                        // XXX This will miss mutations of internal nodes. Perhaps defer to the child validators
+                        // XXX This will miss mutations of internal node. Perhaps defer to the child validators
                         if (empty($result) && !empty($children)) {
                             $e->send(E_ERROR, 'Strategy_FixNesting: Node contents removed');
                         } else if ($result != $children) {

@@ -56,12 +56,18 @@ AppAsset::register($this);
                  ],
             ],
             ['label' => 'Đăng ký cảnh báo', 'url' => ['/warning/register']],
-            ['label' => 'Nhận bản tin', 'url' => ['/site/news']],
         ],
         ]);
 ?>
-
 <?php
+    if (\Yii::$app->user->can('reportView')) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-left'],
+            'items' =>[
+                ['label' => 'Báo cáo/thống kê', 'url' => ['/site/report']],
+            ]
+        ]);
+    }
     if(Yii::$app->user->isGuest){
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],

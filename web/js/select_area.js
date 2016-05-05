@@ -36,7 +36,7 @@ $('#ward').on('change', function (e) {
     var province = $('#province option:selected').val();
     var district = $('#district option:selected').val();
     $.ajax({
-        url:"/warning/nodes",
+        url:"/site/nodes",
         type: "GET",
         contentType: "JSON",
         data: {province:province,district:district,ward:ward},

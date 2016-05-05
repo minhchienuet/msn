@@ -7,7 +7,7 @@
  * character data (from the CDATA sections). Internally, their
  * data is parsed with all entities expanded. Surprisingly, the text token
  * does have a "tag name" called #PCDATA, which is how the DTD represents it
- * in permissible child nodes.
+ * in permissible child node.
  */
 class HTMLPurifier_Node_Text extends HTMLPurifier_Node
 {

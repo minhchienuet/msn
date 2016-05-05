@@ -44,10 +44,9 @@ AppAsset::register($this);
                     ['label' => 'AQI Quốc tế', 'url' => ['/aqi-qt']],
                 ],
             ],
-//            ['label' => 'Nodes', 'url' => ['/node']],
-            ['label' => 'Báo cáo/Thống kê', 'url' => ['/site/report']],
-            ['label' => 'Cảnh báo', 'url' => ['/site/warning']],
-//            ['label' => 'Bản tin', 'url' => ['/site/news']],
+            ['label' => 'Cảnh báo', 'url' => ['/admin/warning']],
+            ['label' => 'Nodes', 'url' => ['/admin/node']],
+            ['label' => 'Sensors', 'url' => ['/sensors']],
         ],
     ]);
 
@@ -66,7 +65,8 @@ AppAsset::register($this);
                 [
                     'label' => ' '. Yii::$app->user->identity->email . ' ',
                     'items'=>[
-                        ['label' => 'Setting Account', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                        ['label' => 'Cài đặt tài khoản', 'url' => ['/profile'], 'linkOptions' => ['data-method' => 'post']],
+                        ['label' => 'Danh sách cảnh báo', 'url' => ['/site/warning/list']],
                         ['label' => 'Logout', 'url' => ['/logout'], 'linkOptions' => ['data-method' => 'post']],
                     ],
                 ],

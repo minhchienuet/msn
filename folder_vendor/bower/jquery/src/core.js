@@ -227,7 +227,7 @@ jQuery.extend( {
 
 		// Not plain objects:
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
-		// - DOM nodes
+		// - DOM node
 		// - window
 		if ( jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;

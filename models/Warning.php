@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use budyaga\users\models\User;
+use budyaga\users\models\Node;
 
 /**
  * This is the model class for table "warnings".

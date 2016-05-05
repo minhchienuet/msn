@@ -2323,7 +2323,7 @@ class HTML5TreeConstructer
                             $cat = $this->getElementCategory($node->tagName);
 
                             /* 2. If node is an li, dd or dt element, then pop all
-                            the    nodes from the current node up to node, including
+                            the    node from the current node up to node, including
                             node, then stop this algorithm. */
                             if ($token['name'] === $node->tagName || ($token['name'] !== 'li'
                                     && ($node->tagName === 'dd' || $node->tagName === 'dt'))
@@ -3055,7 +3055,7 @@ class HTML5TreeConstructer
 
                             /* 3. If there is no furthest block, then the UA must
                             skip the subsequent steps and instead just pop all
-                            the nodes from the bottom of the stack of open
+                            the node from the bottom of the stack of open
                             elements, from the current node up to the formatting
                             element, and remove the formatting element from the
                             list of active formatting elements. */
@@ -3166,7 +3166,7 @@ class HTML5TreeConstructer
                             element. */
                             $clone = $formatting_element->cloneNode();
 
-                            /* 10. Take all of the child nodes of the furthest
+                            /* 10. Take all of the child node of the furthest
                             block and append them to the clone created in the
                             last step. */
                             while ($furthest_block->hasChildNodes()) {
@@ -3288,7 +3288,7 @@ class HTML5TreeConstructer
                                 parse error. */
                                 // k
 
-                                /* Pop all the nodes from the current node up to
+                                /* Pop all the node from the current node up to
                                 node, including node, then stop this algorithm. */
                                 for ($x = count($this->stack) - $n; $x >= $n; $x--) {
                                     array_pop($this->stack);

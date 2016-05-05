@@ -32,7 +32,7 @@ abstract class HTMLPurifier_Node
     /**
      * When true, this node should be ignored as non-existent.
      *
-     * Who is responsible for ignoring dead nodes?  FixNesting is
+     * Who is responsible for ignoring dead node?  FixNesting is
      * responsible for removing them before passing on to child
      * validators.
      */

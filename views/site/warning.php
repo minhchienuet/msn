@@ -1,32 +1,36 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nguyen
- * Date: 3/10/16
- * Time: 4:01 PM
- */
+
 use yii\helpers\Html;
 
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Warning */
+
 $this->title = 'Đăng ký nhận cảnh báo';
+$this->params['breadcrumbs'][] = ['label' => 'Warnings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h3 class="text-danger text-center"> <?= Html::encode($this->title) ?></h3>
-<form class="form-horizontal">
+<h5 class="text-info text-center">* is required</h5>
+<form class="form-horizontal" method="post">
+    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+
+    <input type="hidden" name="user_id" value="<?=Yii::$app->user->identity->id?>" />
     <div class="form-group row">
         <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
         <div class="col-md-4">
-            <select class="form-control" id="province">
+            <select class="form-control" name='province' id="province">
                 <option value="">--Select--</option>
-                <?php foreach($addresses as $address): ?>
-                    <option value=" <?php echo $address->province; ?> "> <?php echo $address->province; ?></option>
+                <?php foreach($provinces as $province): ?>
+                    <option value="<?php echo $province->province; ?>"><?php echo $province->province; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
     </div>
     <div class="form-group row">
-        <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+        <label for="district"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
         <div class="col-md-4">
-            <select class="form-control" id="district">
+            <select class="form-control" name='district' id="district">
                 <option value="">--Select--</option>
             </select>
         </div>
@@ -35,10 +39,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="form-group row">
         <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
         <div class="col-md-4">
-            <select class="form-control" id="ward">
+            <select class="form-control" name="ward" id="ward">
                 <option value="">--Select--</option>
             </select>
         </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="node"  class="col-sm-offset-1 col-sm-3 control-label">Node</label>
+        <div class="col-md-4">
+            <select class="form-control" name="node_id" id="node">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
@@ -51,59 +65,67 @@ $this->params['breadcrumbs'][] = $this->title;
                 <input type="radio" name="standard" id="tcqt" value="TCQT">TC Quốc Tế
             </label>
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
-    <div class="form-group row">
-            <div id="levels_tcvn" hidden="hidden">
-                <label for='api' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
-                <div class='col-md-4'>
-                    <select class='form-control'>
-                        <?php foreach($aqi_vn as $aqi): ?>
-                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
+    <div class="form-group row" id="level">
 
-            <div id="levels_tcqt" hidden="hidden">
-                <label for='api' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
-                <div class='col-md-4'>
-                    <select class='form-control'>
-                        <?php foreach($aqi_qt as $aqi): ?>
-                            <option value="$aqi->level"> <?php echo $aqi->level; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
     </div>
 
     <div class="form-group row">
         <label for="time" class="col-sm-offset-1 col-sm-3 control-label">Thời gian nhận cảnh báo</label>
         <div class="col-md-4">
-            <label class="radio-inline">
-                <input type="radio" name="time" id="byDay" value="byDay">Theo ngày
+            <label class="radio-inline" data-toggle = 'tooltip' data-placement = "left" title="Email cảnh báo được gửi 7:00 AM hằng ngày">
+                <input type="radio" name="time_interval" id="byDay" value="byDay">Theo ngày
             </label>
-            <label class="radio-inline">
-                <input type="radio" name="time" id="byHour" value="byHour">Theo giờ
+            <label class="radio-inline" data-toggle = 'tooltip' data-placement = "left" title="Email cảnh báo được gửi 2h một lần hằng ngày">
+                <input type="radio" name="time_interval" id="byHour" value="byHour">Theo giờ
             </label>
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
         <label for="time" class="col-sm-offset-1 col-sm-3 control-label">Email nhận cảnh báo</label>
         <div class="col-md-4">
-            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+            <input type="email" class="form-control" name="email" id="email" value="<?php echo Yii::$app->user->identity->email; ?>">
         </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
 
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-2">
-            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalWarning"> Đăng ký </button>
-            <a href="http://localhost/workspace/msn/web/index.php" class="btn btn-danger" role="button"> Hủy bỏ </a>
+            <button type="submit" class="btn btn-primary"> Đăng ký </button>
+            <a href="/" class="btn btn-danger" role="button"> Hủy bỏ </a>
         </div>
     </div>
 </form>
 <br/><br>
+<div id="levels_tcvn" hidden="hidden">
+    <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
+    <div class='col-md-4'>
+        <select class='form-control' name="level" id="level_vn">
+            <option value="">--Select--</option>
+            <?php foreach($aqi_vn as $aqi): ?>
+                <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
+</div>
+
+<div id="levels_tcqt" hidden="hidden">
+    <label for='level' class='col-sm-offset-1 col-sm-3 control-label'>Mức độ nhận cảnh báo</label>
+    <div class='col-md-4'>
+        <select class='form-control' name="level" id="level_qt">
+            <option value="">--Select--</option>
+            <?php foreach($aqi_qt as $aqi): ?>
+                <option value="<?php echo $aqi->level; ?>"><?php echo $aqi->level; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
+</div>
 <div id="chart_tcvn" hidden="hidden">
     <div class="col-md-offset-3 col-md-6">
         <table class="table table-bordered">
@@ -143,22 +165,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php endforeach; ?>
             </tr>
         </table>
-    </div>
-</div>
-<div class="modal fade" id="myModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalWarningLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalWarningLabel">Congratulation!</h4>
-            </div>
-                <div class="modal-body text-info">
-                    Bạn đã đăng ký nhận cảnh báo thành công!
-                </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-            </div>
-        </div>
     </div>
 </div>
 <script src="/js/select_area.js"></script>

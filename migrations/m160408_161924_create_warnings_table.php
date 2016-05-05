@@ -34,7 +34,7 @@ class m160408_161924_create_warnings_table extends Migration
             'fk-warning-node_id',
             'warnings',
             'node_id',
-            'nodes',
+            'node',
             'id',
             'CASCADE',
             'CASCADE'

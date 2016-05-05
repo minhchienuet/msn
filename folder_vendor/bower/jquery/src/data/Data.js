@@ -34,7 +34,7 @@ Data.prototype = {
 	},
 	cache: function( owner ) {
 
-		// We can accept data for non-element nodes in modern browsers,
+		// We can accept data for non-element node in modern browsers,
 		// but we should not, see #8335.
 		// Always return an empty object.
 		if ( !acceptData( owner ) ) {
@@ -48,7 +48,7 @@ Data.prototype = {
 		if ( !value ) {
 			value = {};
 
-			// We can accept data for non-element nodes in modern browsers,
+			// We can accept data for non-element node in modern browsers,
 			// but we should not, see #8335.
 			// Always return an empty object.
 			if ( acceptData( owner ) ) {
@@ -181,7 +181,7 @@ Data.prototype = {
 
 			// Support: Chrome <= 35-45+
 			// Webkit & Blink performance suffers when deleting properties
-			// from DOM nodes, so set to undefined instead
+			// from DOM node, so set to undefined instead
 			// https://code.google.com/p/chromium/issues/detail?id=378607
 			if ( owner.nodeType ) {
 				owner[ this.expando ] = undefined;

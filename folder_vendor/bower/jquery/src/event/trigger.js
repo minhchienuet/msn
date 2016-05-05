@@ -21,7 +21,7 @@ jQuery.extend( jQuery.event, {
 
 		cur = tmp = elem = elem || document;
 
-		// Don't do events on text and comment nodes
+		// Don't do events on text and comment node
 		if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
 			return;
 		}

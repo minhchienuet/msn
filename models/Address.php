@@ -12,7 +12,7 @@ use Yii;
  * @property string $district
  * @property string $ward
  *
- * @property Nodes[] $nodes
+ * @property Nodes[] $node
  */
 class Address extends \yii\db\ActiveRecord
 {
