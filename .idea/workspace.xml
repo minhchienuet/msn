@@ -52,13 +52,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WarningController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WarningController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/WarningController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.28651685" vertical-offset="918" max-vertical-offset="3570">
+            <state line="70" column="48" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-10.461538" vertical-offset="918" max-vertical-offset="3570">
               <folding>
                 <element signature="e#35#65#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="11" selection-start="188" selection-end="188" vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="595">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/models/Node.php" />
         <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/controllers/NodeController.php" />
         <option value="$PROJECT_DIR$/vendor/budyaga/yii2-users/models/NodeSearch.php" />
         <option value="$PROJECT_DIR$/views/site/warning.php" />
@@ -120,6 +128,7 @@
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/controllers/WarningController.php" />
         <option value="$PROJECT_DIR$/models/Warning.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -755,10 +764,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/WarningController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.28651685" vertical-offset="918" max-vertical-offset="3570">
+        <state line="70" column="48" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-10.461538" vertical-offset="918" max-vertical-offset="3570">
           <folding>
             <element signature="e#35#65#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="11" selection-start="188" selection-end="188" vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="595">
+          <folding />
         </state>
       </provider>
     </entry>
