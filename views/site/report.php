@@ -75,25 +75,23 @@ $this->title = 'Báo cáo/Thống kê';
         <div class="col-md-4">
             <select multiple class="form-control">
                 <option>Bụi PM 2.5</option>
-                <option>Nhiệt độ</option>
-                <option>Độ ẩm</option>
                 <option>SO2</option>
                 <option>CO</option>
                 <option>NO</option>
             </select>
         </div>
     </div>
-    <div class="form-group row">
-        <label for="Data Type" class="col-sm-offset-1 col-sm-3 control-label">Dạng số liệu</label>
-        <div class="col-md-4">
-            <label class="radio-inline">
-                <input type="radio" name="dataType" id="chart" value="chart"> Dạng biểu đồ
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="dataType" id="table" value="table"> Dạng bảng
-            </label>
-        </div>
-    </div>
+<!--    <div class="form-group row">-->
+<!--        <label for="Data Type" class="col-sm-offset-1 col-sm-3 control-label">Dạng số liệu</label>-->
+<!--        <div class="col-md-4">-->
+<!--            <label class="radio-inline">-->
+<!--                <input type="radio" name="dataType" id="chart" value="chart"> Dạng biểu đồ-->
+<!--            </label>-->
+<!--            <label class="radio-inline">-->
+<!--                <input type="radio" name="dataType" id="table" value="table"> Dạng bảng-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group row">
         <div class="col-sm-offset-5 col-sm-4">
 <!--            <button type="button" id="report" class="btn btn-primary "> OK </button>-->

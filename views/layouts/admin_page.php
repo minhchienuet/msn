@@ -44,10 +44,10 @@ AppAsset::register($this);
                     ['label' => 'AQI Quốc tế', 'url' => ['/aqi-qt']],
                 ],
             ],
-            ['label' => 'Nodes', 'url' => ['/node']],
+//            ['label' => 'Nodes', 'url' => ['/node']],
             ['label' => 'Báo cáo/Thống kê', 'url' => ['/site/report']],
             ['label' => 'Cảnh báo', 'url' => ['/site/warning']],
-            ['label' => 'Bản tin', 'url' => ['/site/news']],
+//            ['label' => 'Bản tin', 'url' => ['/site/news']],
         ],
     ]);
 
