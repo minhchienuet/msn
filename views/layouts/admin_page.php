@@ -40,8 +40,8 @@ AppAsset::register($this);
             [
                 'label' => 'AQI',
                 'items' => [
-                    ['label' => 'AQI Việt Nam', 'url' => ['/aqi-vn']],
-                    ['label' => 'AQI Quốc tế', 'url' => ['/aqi-qt']],
+                    ['label' => 'AQI Việt Nam', 'url' => ['/admin/aqi/filter','standard'=>1]],
+                    ['label' => 'AQI Quốc tế', 'url' => ['/admin/aqi/filter','standard'=>2]],
                 ],
             ],
             ['label' => 'Cảnh báo', 'url' => ['/admin/warning']],

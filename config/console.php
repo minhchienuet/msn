@@ -14,6 +14,17 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'msn.air.uet@gmail.com',
+                'password' => 'chientamhoang',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+        ],
         'log' => [
             'targets' => [
                 [

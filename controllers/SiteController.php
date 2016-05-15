@@ -107,7 +107,11 @@ class SiteController extends Controller
     }
 
     public function actionReport(){
-        return $this->render('report');
+        $sql = "SELECT DISTINCT province FROM addresses ORDER BY province ASC" ;
+        $provinces = Address::findBySql($sql)->all();
+        return $this->render('report',[
+            'provinces' => $provinces,
+        ]);
     }
 
     public function actionResult(){

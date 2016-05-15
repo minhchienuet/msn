@@ -18,19 +18,19 @@ $this->title = 'Báo cáo/Thống kê';
     <div class="form-group row">
         <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Tỉnh</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Hà Nội</option>
-                <option>Hà Nam</option>
+            <select class="form-control" name='province' id="province">
+                <option value="">--Select--</option>
+                <?php foreach($provinces as $province): ?>
+                    <option value="<?php echo $province->province; ?>"><?php echo $province->province; ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
     </div>
-
     <div class="form-group row">
-        <label for="province" class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
+        <label for="district"  class="col-sm-offset-1 col-sm-3 control-label">Quận/Huyện</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Cầu Giấy</option>
-                <option>Nam Từ Liêm</option>
+            <select class="form-control" name='district' id="district">
+                <option value="">--Select--</option>
             </select>
         </div>
     </div>
@@ -38,11 +38,20 @@ $this->title = 'Báo cáo/Thống kê';
     <div class="form-group row">
         <label for="ward"  class="col-sm-offset-1 col-sm-3 control-label">Xã/Phường</label>
         <div class="col-md-4">
-            <select class="form-control">
-                <option>Dịch Vọng</option>
-                <option>Mai Dịch</option>
+            <select class="form-control" name="ward" id="ward">
+                <option value="">--Select--</option>
             </select>
         </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="node"  class="col-sm-offset-1 col-sm-3 control-label">Node</label>
+        <div class="col-md-4">
+            <select class="form-control" name="node_id" id="node">
+                <option value="">--Select--</option>
+            </select>
+        </div>
+        <div class="col-md-2"><h4 class="text-danger ">*</h4></div>
     </div>
     <div class="form-group row">
         <label for="startDate" class="col-sm-offset-1 col-sm-3 control-label">Từ ngày</label>
@@ -111,7 +120,7 @@ $this->title = 'Báo cáo/Thống kê';
         </div>
     </div>
 </div>
-
+<script src="/js/select_area.js"></script>
 <script>
 $('#report').on('click', function () {
         var content = $("#result").html();
